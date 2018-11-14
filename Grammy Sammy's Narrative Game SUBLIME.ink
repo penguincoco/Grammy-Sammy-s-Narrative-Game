@@ -1,3 +1,4 @@
+//Note: Game disappears after you play it once
 VAR chalk = false
 VAR wallet = 25
 VAR chalk_cost = 5
@@ -105,8 +106,8 @@ Kimmy:			...!
 -> Map
 
 === Map
-+ [Go to the store] -> Store
-+ [Go to the Playground] -> Playground
++ [Store] -> Store
++ [Playground] -> Playground
 + [Downtown] -> Downtown
 
 === Kimmy_House
@@ -164,9 +165,9 @@ You don't have enough money! :(
 
 === Playground
 
-+ [Linda] -> Linda 
-+ [Janey] 
-+ [Blythe]
+* [Linda] -> Linda 
+* [Janey] -> Janey
+* [Blythe] -> Blythe
 + [Open Map] -> Map
 
 === Linda
@@ -185,7 +186,69 @@ Linda:			Oh, having a job is good. When I’m a little older I want to get one a
 Kimmy:			I love dogs.
 Dana:			We’re looking for people to play games with. Want to play a game with us, Linda?
 Linda:			I guess so. I was playing with Donna earlier, but I could play some more.
+-> Try_Play
 
+=== Janey
+
+Dana:			Hey Janey, how are you?
+Janey:			You know the Grenada movie theatre? I got a summer job there. I started last week.
+Kimmy:			Wow… my mom took me there once...
+Janey:			What did you see? I go to the movies a lot, so I bet I saw it too.
+Kimmy:			Oh… we saw the movie with the… Uh... the fairy godmother and the shoe…
+Janey:			Cinderella?
+Kimmy:			Yeah... and we saw Mary Poppins.
+Janey:			I saw that at The Grenada too. It was so great.
+Dana:			If we go see a movie there, where would we find you?
+Janey:			I’m at the snack counter, but I’m too little to be a cashier. I’m helping make popcorn… just until I’m old enough to do something more serious.
+Kimmy:			I love popcorn!
+Janey:			Yeah, it’s pretty awesome to be at the snack counter. I love popcorn. I can have free soda whenever I want, too.
+Dana:			I also have a summer job! I’m babysitting Kimmy! I wasn’t planning on working, but I think it’s great.
+Janey:			My mom said a summer job is important. I didn’t want her to think I was lazy, and I love movies so I got my cousin to help me get the job. He sells tickets there.
+Dana:			I’m glad I won’t be lazy this summer. I think I’m getting too old to be lazy. I mean, I’m going into the 5th grade.
+Janey:			Yeah, it’s more fun to be out with people who aren’t just teachers and classmates too.
+Janey:			By the way, I’m not working today. Wanna play together?
+-> Try_Play
+
+=== Blythe
+
+Kimmy:			P-please go away...
+Dana:			Blythe, knock it off! I’m a babysitter so you can’t bug me anymore, got it?
+Blythe:			Poor Dana. Poor Kimmy. You can’t get away from me! I’m the bicycle lord.
+Blythe:			I’ll only stop following you if you play a game with me.
+Dana:			No.
+Blythe:			Yes.
+Dana:			Fine.
+Blythe:			That’s right.
+-> Try_Play
+
+=== Downtown 
++ [Jimmy] -> Jimmy
++ [Open Map] -> Map
+
+=== Jimmy 
+
+Jimmy:			...Hi Kimmy.
+Kimmy:			Hi Jimmy…
+Dana:			...
+Dana:			Whatcha reading there, Jimmy? Looks neat.
+Jimmy:			M-my comic… Archie...
+Dana:			Some of my friends at school read that! Did you get it at the bookstore?
+Jimmy:			Yeah!
+Kimmy:			I’ve never read a comic before.
+Jimmy:			Y-you can borrow one of mine whenever you like, Kimmy! And then we can uh…
+Jimmy:			We can talk about it and pick our--our favorite characters!
+Dana:			Wow! That’s so nice of you, Jimmy! Guess you have a new friend, Kimmy!
+Kimmy:			I think… that sounds fun...
+Jimmy:			A-anytime, anytime… um…
+Dana:			Say, are you free to play a game with us, Jimmy? We’ll teach you something new!
+Jimmy:			I’m not very good at games… b-but, if Kimmy wants me to...
+Dana:			I’m teaching Kimmy games and helping her make friends this summer.
+Jimmy:			If you’re learning games, can I play games with you on the playground sometimes too, Kimmy? Once school starts?
+Kimmy:			...Ok. I don’t play much at school but I will with you if you want.
+Jimmy:			What! Oh! Yes… yes please…
+-> Try_Play
+
+=== Try_Play
 + [play with chalk]
 { chalk == true:
 	-> Play
@@ -193,18 +256,58 @@ Linda:			I guess so. I was playing with Donna earlier, but I could play some mor
 	-> No_Games
 }
 
-=== Downtown 
--> Done
-
 === No_Games 
 Dana:			Oh no! I’m sorry… I thought I had some stuff to play games with in my bag… but it looks like I ran out.
 Kimmy:			Oh no...
 Dana:			It’s ok! Kimmy, let’s run to the store and buy some game pieces! We’ll be right back!
--> Playground 
+-> Map
 
 === Play 
-Let's play hopscotch! 
--> Done
+Linda:			Hopscotch sounds pretty easy, but... I guess I'll try it
+Dana: 			Okay, I'll teach you how to play...
+
+-> Choice1
+
+= Choice1
++ You need chalk and a rock -> Choice2
++ You need chalk and eggs -> Choice2
++ You need chalk and snacks -> Choice2
+
+= Choice2
++ Then, put the eggs on the ground and draw small squares n the ground around them -> Choice3
++ Then, count how many snacks you have and draw that many squares in a column using your chalk -> Choice3
++ Then, use your chalk to draw ten squares in a column with some rows containing two squares -> Choice3
+
+= Choice3
++ Now, toss the rock into a square and hop to the other end of the column, picking it up on your way back -> Choice4
++ Now, each player turns hopping through the egg squares, trying not to squash them -> Choice4
++ Now, everyone hops through the squares all at once, trying to pick up the snacks -> Choice4
+
+= Choice4
++ You win if you pick up the most snacks -> GameOver
++ You win if you pick up your rock without falling or tossing it outside of the column ten times -> GameOver
++ You win if you finish ten turns without breaking more than one egg -> GameOver
+
+= GameOver
+
+Dana:			We did it!
+Linda:			I usually only play games with my dad or brothers, but that was fun.
+Kimmy:			Th--thanks for playing with us, Linda.
+Linda:			I’m going to visit my auntie again in a few weeks, so I’ll see if maybe she’ll want to learn hopscotch thanks for teaching it to me.
+Dana:			Oh, thank you Linda. You’re a good student!
+Linda:			I like to learn stuff. I’m glad it’s summer break though… we never get assigned anything fun in school. But my auntie gave me some biology books to read and it’s really fun.
+Kimmy:			What’s… biology?
+Linda:			It’s about studying living stuff like plants and animals, and people sometimes too.
+Dana:			I hope I get to take biology soon. I like math and science classes a lot.
+Kimmy:			If I could study dogs, I think I’d be happy...
+-> Success
+
+= Success
+~ chalk = false 
+Dana:			Wasn't that fun, Kimmy!
+Kimmy:			Y-yes…
+Dana:			I think this deserves a sticker. You did a good job! We're gonna keep making you lots of friends...!
+-> Playground
 
 === Done
 ->DONE
