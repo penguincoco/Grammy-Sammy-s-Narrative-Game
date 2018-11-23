@@ -2,6 +2,10 @@
 VAR chalk = false
 VAR wallet = 25
 VAR chalk_cost = 5
+VAR choice1 = false
+VAR choice2 = false
+VAR choice3 = false
+VAR choice4 = false
 
 Late 1960s, Massachusetts.
 
@@ -12,15 +16,15 @@ Your mom is standing on the porch. -> Intro_Part_1
 -> Mom1
 
 === Mom1
-Mom! Look! God sent me a baby!
-...Excuse me?
-Her name is Kimmy!
+Dana: 			Mom! Look! God sent me a baby!
+Mom: 			...Excuse me?
+Dana: 			Her name is Kimmy!
 -> Kimmy1
 
 = Kimmy1
 + [It seems that Kimmy has something to say.]
-...
-(Kimmy remains silent.)
+Kimmy: 			...
+				(Kimmy remains silent.)
 -> Nope
 
 = Nope
@@ -28,56 +32,56 @@ Her name is Kimmy!
 * {not X} [...] -> X
 
 = X
-That… No, Dana. God did not send you a baby.
+Mom: 			That… No, Dana. God did not send you a baby.
 
-What do you mean…? You said God sends people babies sometimes! You told me that.
+Dana: 			What do you mean…? You said God sends people babies sometimes! You told me that.
 
-Well… nevermind what I said. It doesn’t apply to you. God isn’t about to send you a baby anytime soon, trust me.
+Mom: 			Well… nevermind what I said. It doesn’t apply to you. God isn’t about to send you a baby anytime soon, trust me.
 
-What! Why? I wished for a baby, and he granted my wish. Isn’t it obvious?
+Dana: 			What! Why? I wished for a baby, and he granted my wish. Isn’t it obvious?
 
-Where did you find this little girl? Honey, where’s your house?
+Mom: 			Where did you find this little girl? Honey, where’s your house?
 -> Kimmy1
 
 = Y
-Kimmy, can you tell me where your parents are?
+Mom: 			Kimmy, can you tell me where your parents are?
 
-I can go home later if I want…
+Kimmy: 			I can go home later if I want…
 
-Well maybe God didn’t send her, but she came out of nowhere! Kimmy, you just… appeared, right? Where did you come from?
+Dana: 			Well maybe God didn’t send her, but she came out of nowhere! Kimmy, you just… appeared, right? Where did you come from?
 
-Ferry Street... I untied myself from the porch so I could go for a walk…
+Kimmy: 			Ferry Street... I untied myself from the porch so I could go for a walk…
 
 +[How strange] -> Odd
 
 = Odd
-It’s ok dear, let’s go to your house Kimmy… you said it’s on Ferry Street? Your parents are probably worried.
+Mom: 			It’s ok dear, let’s go to your house Kimmy… you said it’s on Ferry Street? Your parents are probably worried.
 
 +[Head to Kimmy's house] -> Intro_Part_2
 
 === Intro_Part_2
 
-Dana: I'm sorry... I thought God sent me a baby and I got so excited...
+Dana: 			I'm sorry... I thought God sent me a baby and I got so excited...
 
-Kimmy Mom: Oh, don't worry. Thank you for finding Kimmy and walking her home. What's your name, dear? 
+Kimmy's Mom: 	Oh, don't worry. Thank you for finding Kimmy and walking her home. What's your name, dear? 
 
-Dana: I'm Dana...
+Dana: 			I'm Dana...
 
-Kimmy Mom: I don't know many kids as responsible as you, walking Kimmy all the way home. I hope you two can be friends. I know Kimmy could learn a lot from you. 
+Kimmy's Mom: 	I don't know many kids as responsible as you, walking Kimmy all the way home. I hope you two can be friends. I know Kimmy could learn a lot from you. 
 
-Kimmy: My... friend? 
+Kimmy: 			My... friend? 
 
-Dana: Yes! I’d love to be friends, Kimmy. Can I come by and play with you tomorrow?
+Dana: 			Yes! I’d love to be friends, Kimmy. Can I come by and play with you tomorrow?
 
-Kimmy Mom: I've been looking for a babysitter, actually. Her grandma was helping with that before, but she... well, she can't anymore. Kimmy's normally alright in her harness on the porch, but she's getting a little old for that... If you'd like to play with Kimmy tomorrow, I'd be happy to pay you a quarter to keep an eye on her.
-Dana: Wow! Yes, please! I'd love to! 
-Kimmy Mom: My work schedule is a little... hectic. It'd be great to have you by in the morning. 
-Dana: I'll be here first thing! Wow, I didn't expect to land a job today. Thanks so much! 
-Mom: Well, that all sounds good to me. A summer job will be a nice way to keep busy. Now then, let's leave this nice family to their dinner.
-Dana: Ok. Bye bye, Kimmy, and Mrs...? 
-Kimmy Mom: Mrs. Munro. Again, thank you for giving Kimmy a hand. It was nice meeting you, Mrs. Navaroo. 
-Mom: Likewise. 
-Kimmy: Bye bye. 
+Kimmy's Mom: 	I've been looking for a babysitter, actually. Her grandma was helping with that before, but she... well, she can't anymore. Kimmy's normally alright in her harness on the porch, but she's getting a little old for that... If you'd like to play with Kimmy tomorrow, I'd be happy to pay you a quarter to keep an eye on her.
+Dana: 			Wow! Yes, please! I'd love to! 
+Kimmy's Mom: 	My work schedule is a little... hectic. It'd be great to have you by in the morning. 
+Dana: 			I'll be here first thing! Wow, I didn't expect to land a job today. Thanks so much! 
+Mom: 			Well, that all sounds good to me. A summer job will be a nice way to keep busy. Now then, let's leave this nice family to their dinner.
+Dana: 			Ok. Bye bye, Kimmy, and Mrs...? 
+Kimmy's Mom: 	Mrs. Munro. Again, thank you for giving Kimmy a hand. It was nice meeting you, Mrs. Navaroo. 
+Mom: 			Likewise. 
+Kimmy: 			Bye bye. 
 
 + [Day 1] -> Day1_Intro
 
@@ -270,26 +274,46 @@ Dana: 			Okay, I'll teach you how to play...
 -> Choice1
 
 = Choice1
-+ You need chalk and a rock -> Choice2
-+ You need chalk and eggs -> Choice2
-+ You need chalk and snacks -> Choice2
++ You need chalk and a rock 
+~ choice1 = true 
+-> Choice2
++ You need chalk and eggs 
+-> Choice2
++ You need chalk and snacks
+-> Choice2
 
 = Choice2
-+ Then, put the eggs on the ground and draw small squares n the ground around them -> Choice3
-+ Then, count how many snacks you have and draw that many squares in a column using your chalk -> Choice3
-+ Then, use your chalk to draw ten squares in a column with some rows containing two squares -> Choice3
++ Then, put the eggs on the ground and draw small squares on the ground around them 
+-> Choice3
++ Then, count how many snacks you have and draw that many squares in a column using your chalk 
+-> Choice3
++ Then, use your chalk to draw ten squares in a column with some rows containing two squares 
+~ choice2 = true
+-> Choice3
 
 = Choice3
-+ Now, toss the rock into a square and hop to the other end of the column, picking it up on your way back -> Choice4
-+ Now, each player turns hopping through the egg squares, trying not to squash them -> Choice4
-+ Now, everyone hops through the squares all at once, trying to pick up the snacks -> Choice4
++ Now, toss the rock into a square and hop to the other end of the column, picking it up on your way back 
+~ choice3 = true
+-> Choice4
++ Now, each player turns hopping through the egg squares, trying not to squash them 
+-> Choice4
++ Now, everyone hops through the squares all at once, trying to pick up the snacks 
+-> Choice4
 
 = Choice4
-+ You win if you pick up the most snacks -> GameOver
-+ You win if you pick up your rock without falling or tossing it outside of the column ten times -> GameOver
-+ You win if you finish ten turns without breaking more than one egg -> GameOver
++ You win if you pick up the most snacks -> GameOver.incorrect
++ You win if you pick up your rock without falling or tossing it outside of the column ten times 
+~ choice4 = true 
+-> GameOver.check
++ You win if you finish ten turns without breaking more than one egg -> GameOver.incorrect
 
-= GameOver
+
+=== GameOver
+
+= correct 
+Linda: 			That sounds about right!
+
+* [play Hopscotch]
 
 Dana:			We did it!
 Linda:			I usually only play games with my dad or brothers, but that was fun.
@@ -301,14 +325,24 @@ Kimmy:			What’s… biology?
 Linda:			It’s about studying living stuff like plants and animals, and people sometimes too.
 Dana:			I hope I get to take biology soon. I like math and science classes a lot.
 Kimmy:			If I could study dogs, I think I’d be happy...
--> Success
 
-= Success
 ~ chalk = false 
 Dana:			Wasn't that fun, Kimmy!
 Kimmy:			Y-yes…
 Dana:			I think this deserves a sticker. You did a good job! We're gonna keep making you lots of friends...!
 -> Playground
+
+= incorrect 
+Linda:			That doesn't sound right...
+
+-> Playground
+
+= check
+{choice1 and choice2 and choice3 and choice4: 
+    -> GameOver.correct
+    - else: 
+    -> GameOver.incorrect
+    } 
 
 === Done
 ->DONE
