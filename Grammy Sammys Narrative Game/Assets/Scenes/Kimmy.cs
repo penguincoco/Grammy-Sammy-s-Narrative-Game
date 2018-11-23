@@ -20,29 +20,6 @@ public class Kimmy : MonoBehaviour
 
     private void Update()
     {
-        if (!_story.canContinue) return;
-        
-        string text = _story.Continue ();
-        
-        while (_story.canContinue) {
-            
-            text = _story.Continue ();
-            
-            text = text.Trim();
-
-            CreateContentView(text);
-        }
-        
-        string thisText = _story.Continue ();
-        string choiceText = "";
-        if (_story.currentChoices.Count > 0)
-        {
-            foreach (var t in _story.currentChoices)
-            {
-                choiceText += t.text + "\n";
-            }
-            Debug.LogFormat("{0} with choices:\n {1}", thisText, choiceText);
-        }
         
         if (!Input.anyKeyDown) return;
 
@@ -58,6 +35,24 @@ public class Kimmy : MonoBehaviour
                 }
             }
         }
+
+        if (!_story.canContinue) return;
+
+        var text = _story.Continue();
+        var choiceText = "";
+
+        if (_story.currentChoices.Count > 0)
+            foreach (var t in _story.currentChoices)
+            {
+                choiceText += t.text + "\n";
+            }
+
+        Debug.LogFormat("{0} with choices:\n {1}", text, choiceText);
+        
+        
+        text = text.Trim();
+
+        CreateContentView(text);
     }
     
     void CreateContentView (string text) {
