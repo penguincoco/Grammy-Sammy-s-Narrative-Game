@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 114211273206543240}
   - component: {fileID: 114510080190489458}
   m_Layer: 5
-  m_Name: Button Prefab
+  m_Name: Choice Button Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -305,7 +305,7 @@ RectTransform:
   m_GameObject: {fileID: 1319880759404832}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.68774, y: 0.68774, z: 0.68774}
+  m_LocalScale: {x: 0.5952271, y: 0.5952271, z: 0.5952271}
   m_Children: []
   m_Father: {fileID: 224473627684698286}
   m_RootOrder: 0

@@ -16,8 +16,10 @@ Your mom is standing on the porch. -> Intro_Part_1
 -> Mom1
 
 === Mom1
-Dana: Mom! Look! God sent me a baby!
+Dana: Mom! Look! God sent me a baby! 
+
 Mom: ...Excuse me?
+
 Dana: Her name is Kimmy!
 -> Kimmy1
 
@@ -35,11 +37,11 @@ Kimmy: ...
 = X
 Mom: That… No, Dana. God did not send you a baby.
 
-Dana: What do you mean…? You said God sends people babies sometimes! You told me that.
+Dana: What do you mean…? You said God sends people babies sometimes! You told me that. 
 
-Mom: Well… nevermind what I said. It doesn’t apply to you. God isn’t about to send you a baby anytime soon, trust me.
+Mom: Well… nevermind what I said. It doesn’t apply to you. God isn’t about to send you a baby anytime soon, trust me. 
 
-Dana: What! Why? I wished for a baby, and he granted my wish. Isn’t it obvious?
+Dana: What! Why? I wished for a baby, and he granted my wish. Isn’t it obvious? 
 
 Mom: Where did you find this little girl? Honey, where’s your house?
 

@@ -10,38 +10,39 @@ public class Kimmy : MonoBehaviour {
     [SerializeField] private Story _story;
 
     public TMP_Text textPrefab;
-    public Canvas canvas;
+    public Canvas dialogueCanvas;
+    public Canvas choiceCanvas;
     public Button buttonPrefab;
+    public Button dialogueButtonPrefab;
+    public GameObject momSprite;
+    public GameObject danaSprite;
 
     private void Awake()
     {
         RemoveChildren();
         StartStory();
-        RefreshView();
     }
 
     private void StartStory()
     {
         _story = new Story(_inkJsonAsset.text);
+        RefreshView();
     }
     
     private void RefreshView()
     {
         RemoveChildren();
-//        if (!Input.anyKeyDown) return;
-//
-//        if (Input.GetKeyDown(KeyCode.Alpha1))
-//        {
-//            RemoveChildren();
-//        }
         
         while (_story.canContinue) {
-            // Continue gets the next line of the story
             string text = _story.Continue ();
-            // This removes any white space from the text.
             text = text.Trim();
-            // Display the text on screen!
+            
+//            Button dialogue = CreateContentViewButton(text.Trim());
+//            dialogue.onClick.AddListener(TaskOnClick);
             CreateContentView(text);
+//            Button dialogue = CreateContentView(text.Trim());
+//            dialogue.onClick.AddListener(TaskOnClick);
+//            Button dialogueButton = CreateContentView(text);
         }
         
         //display current choices
@@ -68,74 +69,141 @@ public class Kimmy : MonoBehaviour {
     }
     
     void CreateContentView (string text) {
+        TMP_Text storyText = Instantiate (textPrefab) as TMP_Text;
+        storyText.text = text;
+        storyText.transform.SetParent (dialogueCanvas.transform, false);
+       
         if (text.Contains("Dana:"))
         {
             Debug.Log("Dana speaking; text should be red");
-            TMP_Text storyText = Instantiate (textPrefab) as TMP_Text;
             storyText.color = Color.red;
-            storyText.text = text;
-            storyText.transform.SetParent (canvas.transform, false);
+            danaSprite.SetActive(true);
+            momSprite.SetActive(false);
         }
         else if (text.Contains("Mom:"))
         {
             Debug.Log("Mom speaking; text should be yellow");
-            TMP_Text storyText = Instantiate (textPrefab) as TMP_Text;
             storyText.color = Color.yellow;
-            storyText.text = text;
-            storyText.transform.SetParent (canvas.transform, false);
+            danaSprite.SetActive(false);
+            momSprite.SetActive(true);
         }
         else if (text.Contains("Kimmy:"))
         {
             Debug.Log("Kimmy speaking; text should be blue");
-            TMP_Text storyText = Instantiate (textPrefab) as TMP_Text;
-            storyText.color = Color.yellow;
-            storyText.text = text;
-            storyText.transform.SetParent (canvas.transform, false);
+            storyText.color = Color.blue;
+            danaSprite.SetActive(false);
+            momSprite.SetActive(false);
         }
         else
         {
-            TMP_Text storyText = Instantiate (textPrefab) as TMP_Text;
             storyText.color = Color.black;
-            storyText.text = text;
-            storyText.transform.SetParent (canvas.transform, false);
+            danaSprite.SetActive(false);
+            momSprite.SetActive(false);
         }
+        
+        storyText.transform.SetParent (dialogueCanvas.transform, false);
     }
     
+//    Button CreateContentView (string text)
+//    {
+//        Button dialogue = Instantiate(dialogueButtonPrefab) as Button;
+//        dialogue.transform.SetParent(dialogueCanvas.transform, false);
+//
+//        TMP_Text storyText = dialogue.GetComponentInChildren<TMP_Text>();
+//        storyText.text = text;
+//       
+//        
+//        if (text.Contains("Dana:"))
+//        {
+//            Debug.Log("Dana speaking; text should be red");
+//            storyText.color = Color.red;
+//        }
+//        else if (text.Contains("Mom:"))
+//        {
+//            Debug.Log("Mom speaking; text should be yellow");
+//            storyText.color = Color.yellow;
+//        }
+//        else if (text.Contains("Kimmy:"))
+//        {
+//            Debug.Log("Kimmy speaking; text should be blue");
+//            storyText.color = Color.blue;
+//        }
+//        else
+//        {
+//            storyText.color = Color.black;
+//        }
+        
+//        storyText.transform.SetParent (dialogueCanvas.transform, false);
+
+//        return dialogue;
+//    }
+    
     void RemoveChildren () {
-        int childCount = canvas.transform.childCount;
-        for (int i = childCount - 1; i >= 0; --i) {
-            GameObject.Destroy (canvas.transform.GetChild (i).gameObject);
+        int dialogueChildCount = dialogueCanvas.transform.childCount;
+        for (int i = dialogueChildCount - 1; i >= 0; --i) {
+            GameObject.Destroy (dialogueCanvas.transform.GetChild (i).gameObject);
+        }
+
+        int choiceChildCount = choiceCanvas.transform.childCount;
+        for (int i = choiceChildCount - 1; i >= 0; --i)
+        {
+            GameObject.Destroy(choiceCanvas.transform.GetChild(i).gameObject);
         }
     }
     
     Button CreateChoiceView (string text) {
         // Creates the button from a prefab
         Button choice = Instantiate(buttonPrefab) as Button;
-        choice.transform.SetParent(canvas.transform, false);
+        choice.transform.SetParent(choiceCanvas.transform, false);
 		
         // Gets the text from the button prefab
         TMP_Text choiceText = choice.GetComponentInChildren<TMP_Text> ();
         choiceText.text = text;
 
-//         Make the button expand to fit the text
-//        HorizontalLayoutGroup layoutGroup = choice.GetComponent<HorizontalLayoutGroup>();
-//        if (layoutGroup != null)
-//        {
-//            Debug.Log("layout group is null");
-//        }
-//        else
-//        {
-//            Debug.Log("layout group is null");
-//        }
-////        layoutGroup.childForceExpandHeight = false;
-
         return choice;
     }
+    
+    Button CreateContentViewButton (string text) {
+        // Creates the button from a prefab
+        Button dialogue = Instantiate(buttonPrefab) as Button;
+        dialogue.transform.SetParent(dialogueCanvas.transform, false);
+		
+        // Gets the text from the button prefab
+        TMP_Text dialogueText = dialogue.GetComponentInChildren<TMP_Text> ();
+        dialogueText.text = text;
 
+        if (text.Contains("Dana:"))
+        {
+            Debug.Log("Dana speaking; text should be red");
+            dialogueText.color = Color.red;
+        }
+        else if (text.Contains("Mom:"))
+        {
+            Debug.Log("Mom speaking; text should be yellow");
+            dialogueText.color = Color.yellow;
+        }
+        else if (text.Contains("Kimmy:"))
+        {
+            Debug.Log("Kimmy speaking; text should be blue");
+            dialogueText.color = Color.blue;
+        }
+        else
+        {
+            dialogueText.color = Color.black;
+        }
+        
+        return dialogue;
+    }
+    
     void OnClickChoiceButton(Choice choice)
     {
-        Debug.Log("Registering that a button is being pressed");
         _story.ChooseChoiceIndex(choice.index);
+        RefreshView();
+    }
+
+    void TaskOnClick()
+    {
+        Debug.Log("clicking through dialogue");
         RefreshView();
     }
 }
