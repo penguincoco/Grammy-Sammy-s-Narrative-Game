@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &318246307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -545,17 +545,17 @@ Prefab:
     - target: {fileID: 224473627684698286, guid: f68830a0587494a1a868cb8c7c2da7bc,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -165.5
+      value: -246.85501
       objectReference: {fileID: 0}
     - target: {fileID: 224473627684698286, guid: f68830a0587494a1a868cb8c7c2da7bc,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 83.74
+      value: 104.59
       objectReference: {fileID: 0}
     - target: {fileID: 224473627684698286, guid: f68830a0587494a1a868cb8c7c2da7bc,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 22.35
+      value: 27.93
       objectReference: {fileID: 0}
     - target: {fileID: 224473627684698286, guid: f68830a0587494a1a868cb8c7c2da7bc,
         type: 2}
@@ -589,7 +589,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1564397686120384, guid: f68830a0587494a1a868cb8c7c2da7bc, type: 2}
       propertyPath: m_Name
-      value: Button
+      value: Choice Button
       objectReference: {fileID: 0}
     - target: {fileID: 114072314730715360, guid: f68830a0587494a1a868cb8c7c2da7bc,
         type: 2}
@@ -631,9 +631,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a58799d13585543c39596c8ebfed8816, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inkJsonAsset: {fileID: 4900000, guid: f302782e24ac44ec687ee99344e534bf, type: 3}
+  _inkJsonAsset: {fileID: 4900000, guid: 5917127cab976420c8cf54a0ea9b9767, type: 3}
   textPrefab: {fileID: 114865587574567190, guid: 5aa0418408243443ea2a8c80e37196c2,
     type: 2}
+  dialogueFont: {fileID: 11400000, guid: af0a5e76d938e4a50862591836834489, type: 2}
   dialogueCanvas: {fileID: 488577554}
   choiceCanvas: {fileID: 488577554}
   buttonPrefab: {fileID: 114978715648378910, guid: f68830a0587494a1a868cb8c7c2da7bc,
@@ -791,7 +792,7 @@ Prefab:
     - target: {fileID: 224985399829701136, guid: 5aa0418408243443ea2a8c80e37196c2,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -11.174988
+      value: -81.355
       objectReference: {fileID: 0}
     - target: {fileID: 224985399829701136, guid: 5aa0418408243443ea2a8c80e37196c2,
         type: 2}
@@ -835,21 +836,41 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1047841049081390, guid: 5aa0418408243443ea2a8c80e37196c2, type: 2}
       propertyPath: m_Name
-      value: TextMeshPro Text
+      value: Dialogue Text
       objectReference: {fileID: 0}
     - target: {fileID: 114865587574567190, guid: 5aa0418408243443ea2a8c80e37196c2,
         type: 2}
       propertyPath: m_havePropertiesChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114865587574567190, guid: 5aa0418408243443ea2a8c80e37196c2,
         type: 2}
       propertyPath: m_isInputParsingRequired
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1047841049081390, guid: 5aa0418408243443ea2a8c80e37196c2, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114745091138714276, guid: 5aa0418408243443ea2a8c80e37196c2,
+        type: 2}
+      propertyPath: m_ChildControlWidth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114745091138714276, guid: 5aa0418408243443ea2a8c80e37196c2,
+        type: 2}
+      propertyPath: m_ChildForceExpandWidth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114745091138714276, guid: 5aa0418408243443ea2a8c80e37196c2,
+        type: 2}
+      propertyPath: m_ChildControlHeight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114745091138714276, guid: 5aa0418408243443ea2a8c80e37196c2,
+        type: 2}
+      propertyPath: m_ChildForceExpandHeight
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5aa0418408243443ea2a8c80e37196c2, type: 2}
@@ -1149,6 +1170,10 @@ Prefab:
       propertyPath: m_Name
       value: Baby
       objectReference: {fileID: 0}
+    - target: {fileID: 1048513503914868, guid: ac0360bc08afc412a8584b12286a195b, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac0360bc08afc412a8584b12286a195b, type: 2}
   m_IsPrefabAsset: 0
@@ -1190,6 +1215,10 @@ Prefab:
     - target: {fileID: 4226958175025862, guid: 6cf4a40c1ae294393be7898ad40418ae, type: 2}
       propertyPath: m_RootOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1651628815757122, guid: 6cf4a40c1ae294393be7898ad40418ae, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cf4a40c1ae294393be7898ad40418ae, type: 2}

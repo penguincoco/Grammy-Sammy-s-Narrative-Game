@@ -16,15 +16,17 @@ Your mom is standing on the porch. -> Intro_Part_1
 -> Mom1
 
 === Mom1
-Dana: Mom! Look! God sent me a baby! 
++ Dana: Mom! Look! God sent me a baby! -> Mom1_1
 
-Mom: ...Excuse me?
+= Mom1_1
++ Mom: ...Excuse me? -> Dana1_1
 
-Dana: Her name is Kimmy!
--> Kimmy1
+= Dana1_1
++ Dana: Her name is Kimmy -> Kimmy1
 
 = Kimmy1
-+ [It seems that Kimmy has something to say.]
+
++ [It seems that Kimmy has something to say] 
 Kimmy: ...
 (Kimmy remains silent.)
 
@@ -35,107 +37,163 @@ Kimmy: ...
 * {not X} [ ... ] -> X
 
 = X
-Mom: That… No, Dana. God did not send you a baby.
++ Mom: That… No, Dana. God did not send you a baby. -> X_1
 
-Dana: What do you mean…? You said God sends people babies sometimes! You told me that. 
+= X_1
++ Dana: What do you mean…? You said God sends people babies sometimes! You told me that. -> X_2
 
-Mom: Well… nevermind what I said. It doesn’t apply to you. God isn’t about to send you a baby anytime soon, trust me. 
+= X_2
++ Mom: Well… nevermind what I said. It doesn’t apply to you. God isn’t about to send you a baby anytime soon, trust me. -> X_3
 
-Dana: What! Why? I wished for a baby, and he granted my wish. Isn’t it obvious? 
+= X_3
++ Dana: What! Why? I wished for a baby, and he granted my wish. Isn’t it obvious? -> X_4 
 
-Mom: Where did you find this little girl? Honey, where’s your house?
-
--> Kimmy1
+= X_4
++ Mom: Where did you find this little girl? Honey, where’s your house? -> Kimmy1
 
 = Y
-Mom: Kimmy, can you tell me where your parents are?
++ Mom: Kimmy, can you tell me where your parents are? -> Y_1
 
-Kimmy: I can go home later if I want…
+= Y_1
++ Kimmy: I can go home later if I want… -> Y_2
 
-Dana: Well maybe God didn’t send her, but she came out of nowhere! 
-Kimmy, you just… appeared, right? Where did you come from?
+= Y_2
++ Dana: Well maybe God didn’t send her, but she came out of nowhere! -> Y_3 
 
-Kimmy: Ferry Street... I untied myself from the porch so I could go for a walk…
+= Y_3
++ Dana: Kimmy, you just… appeared, right? Where did you come from? -> Y_4
 
+= Y_4
++ Kimmy: Ferry Street... I untied myself from the porch so I could go for a walk… -> Strange
+
+= Strange
 +[How strange] -> Odd
 
 = Odd
-Mom: It’s ok dear, let’s go to your house Kimmy… you said it’s on Ferry Street? Your parents are probably worried.
++ Mom: It’s ok dear, let’s go to your house Kimmy… you said it’s on Ferry Street? Your parents are probably worried. -> To_Kimmys
 
+= To_Kimmys
 +[Head to Kimmy's house] -> Intro_Part_2
 
 === Intro_Part_2
 
-Dana: I'm sorry... I thought God sent me a baby and I got so excited...
++ Dana: I'm sorry... I thought God sent me a baby and I got so excited... -> I_1
 
-Kimmy's Mom: Oh, don't worry. Thank you for finding Kimmy and walking her home. What's your name, dear? 
+= I_1
++ Kimmy's Mom: Oh, don't worry. Thank you for finding Kimmy and walking her home. What's your name, dear? -> I_2
 
-Dana: I'm Dana...
+= I_2
++ Dana: I'm Dana...-> I_3
 
-Kimmy's Mom: I don't know many kids as responsible as you, walking Kimmy all the way home. I hope you two can be friends. I know Kimmy could learn a lot from you. 
+= I_3
++ Kimmy's Mom: I don't know many kids as responsible as you, walking Kimmy all the way home. I hope you two can be friends. I know Kimmy could learn a lot from you. -> I_4
 
-+ [It seems that Kimmy has something to say.] -> continue1
+= I_4
++ [It seems that Kimmy has something to say.] -> I_5
 
-= continue1
-Kimmy: My... friend? 
+= I_5
++ Kimmy: My... friend? -> I_6
 
-Dana: Yes! I’d love to be friends, Kimmy. Can I come by and play with you tomorrow?
+= I_6
++ Dana: Yes! I’d love to be friends, Kimmy. Can I come by and play with you tomorrow? -> I_7
 
-+ [Kimmy's mom looks rather excited] -> continue2
+= I_7
++ [Kimmy's mom looks rather excited] -> I_8
 
-= continue2
-Kimmy's Mom: I've been looking for a babysitter, actually. Her grandma was helping with that before, but she... well, she can't anymore. Kimmy's normally alright in her harness on the porch, but she's getting a little old for that... If you'd like to play with Kimmy tomorrow, I'd be happy to pay you a quarter to keep an eye on her.
+= I_8
+Kimmy's Mom: I've been looking for a babysitter, actually. Her grandma was helping with that before, but she... well, she can't anymore. Kimmy's normally alright in her harness on the porch, but she's getting a little old for that... If you'd like to play with Kimmy tomorrow, I'd be happy to pay you a quarter to keep an eye on her. 
 
-+ [ Accept the job!] -> continue3
++ [ Accept the job!] -> I_9
 
-= continue3
-Dana: Wow! Yes, please! I'd love to! 
-Kimmy's Mom: My work schedule is a little... hectic. It'd be great to have you by in the morning. 
-Dana: I'll be here first thing! Wow, I didn't expect to land a job today. Thanks so much! 
+= I_9
++ Dana: Wow! Yes, please! I'd love to! -> I_10
+
+= I_10
++ Kimmy's Mom: My work schedule is a little... hectic. It'd be great to have you by in the morning. -> I_11
+
+= I_11
+Dana: I'll be here first thing! Wow, I didn't expect to land a job today. Thanks so much! -> I_12
+
+= I_12
 Mom: Well, that all sounds good to me. A summer job will be a nice way to keep busy. Now then, let's leave this nice family to their dinner.
 
-+[Go home] -> continue4
++[Go home] -> I_13
 
-= continue4
-Dana: Ok. Bye bye, Kimmy, and Mrs...? 
-Kimmy's Mom: Mrs. Munro. Again, thank you for giving Kimmy a hand. It was nice meeting you, Mrs. Navaroo. 
-Mom: Likewise. 
-Kimmy: Bye bye. 
+= I_13
++ Dana: Ok. Bye bye, Kimmy, and Mrs...? -> I_14
 
+= I_14
++ Kimmy's Mom: Mrs. Munro. Again, thank you for giving Kimmy a hand. It was nice meeting you, Mrs. Navaroo. -> I_15
+
+= I_15
++ Mom: Likewise. -> I_16
+
+= I_16
++ Kimmy: Bye bye. -> I_17 
+
+= I_17
 + [Day 1] -> Day1_Intro
 
 -> Day1_Intro
 
 === Day1_Intro 
-Dana: Mornin’ Kimmy! I’m here to babysit, like I promised! Is your mom around?
-Kimmy: My mommy’s not inside. She left already.
-Dana: Oh, ok… Um, well… Is there anything you’d like to do today, Kimmy?
-Kimmy: No… I don’t know.
++ Dana: Mornin’ Kimmy! I’m here to babysit, like I promised! Is your mom around? -> D1_1
 
-+ [Figure out what to do] -> Day1_continue1
+= D1_1
++ Kimmy: My mommy’s not inside. She left already. -> D1_2
 
-= Day1_continue1
-Dana: That’s ok, do you have a friend you’d like to visit?
-Kimmy: No...
-Dana: Should we watch TV or something in your house?
-Kimmy: We don’t have a TV. My dad is in there too, so we should go play somewhere else. He’s busy.
+= D1_2
++ Dana: Oh, ok… Um, well… Is there anything you’d like to do today, Kimmy? -> D1_3
 
-+ [Find somewhere else to play] -> Day1_continue2
+= D1_3
++ Kimmy: No… I don’t know. -> D1_4
 
-= Day1_continue2
-Dana: Ok then! Want to walk around and play some games with the other kids?
-Kimmy: Other kids…?
-Dana: You know, the neighborhood kids. 
+= D1_4
++ [Figure out what to do] -> D1_5
 
-+ [Like Donna] -> Day1_continue3
+= D1_5
++ Dana: That’s ok, do you have a friend you’d like to visit? -> D1_6
 
-= Day1_continue3
-Like Donna. Isn’t she your age? You’re both going to be in Kindergarten, right?
-Kimmy: Oh, yeah… I don’t think Donna is my friend though, so she probably wouldn’t want to play...
-Dana: Well, let’s go become her friend! There's lots of other kids around, too. Like Anthony. I know him from school.
-Dana: Come on, let’s go!
-Kimmy: ...!
+= D1_6
++ Kimmy: No... -> D1_7
 
+= D1_7
++ Dana: Should we watch TV or something in your house? -> D1_8
+
+= D1_8
++ Kimmy: We don’t have a TV. My dad is in there too, so we should go play somewhere else. He’s busy. -> D1_9
+
+= D1_9
++ [Find somewhere else to play] -> D1_10
+
+= D1_10
++ Dana: Ok then! Want to walk around and play some games with the other kids? -> D1_11
+
+= D1_11
++ Kimmy: Other kids…? -> D1_12
+
+= D1_12
++ Dana: You know, the neighborhood kids. -> D1_13
+
+= D1_13
++ [Like Donna] -> D1_14
+
+= D1_14
++ Like Donna. Isn’t she your age? You’re both going to be in Kindergarten, right? -> D1_15
+
+= D1_15
++ Kimmy: Oh, yeah… I don’t think Donna is my friend though, so she probably wouldn’t want to play... -> D1_16
+
+= D1_16
++ Dana: Well, let’s go become her friend! There's lots of other kids around, too. Like Anthony. I know him from school. -> D1_17
+
+= D1_17
++ Dana: Come on, let’s go! -> D1_18
+
+= D1_18
++ Kimmy: ...! -> D1_19
+
+= D1_19
 + [Open map] -> Map
 
 === Map
