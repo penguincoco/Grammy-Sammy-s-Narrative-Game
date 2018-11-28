@@ -19,6 +19,9 @@ public class Kimmy : MonoBehaviour {
     public Button dialogueButtonPrefab;
     public GameObject momSprite;
     public GameObject danaSprite;
+
+    public GameObject choicePanel;
+    public GameObject dialoguePanel; 
     
     private void Awake()
     {
@@ -92,15 +95,15 @@ public class Kimmy : MonoBehaviour {
     }
     
     void RemoveChildren () {
-        int dialogueChildCount = dialogueCanvas.transform.childCount;
+        int dialogueChildCount = dialoguePanel.transform.childCount;
         for (int i = dialogueChildCount - 1; i >= 0; --i) {
-            GameObject.Destroy (dialogueCanvas.transform.GetChild (i).gameObject);
+            GameObject.Destroy (dialoguePanel.transform.GetChild (i).gameObject);
         }
 
-        int choiceChildCount = choiceCanvas.transform.childCount;
+        int choiceChildCount = choicePanel.transform.childCount;
         for (int i = choiceChildCount - 1; i >= 0; --i)
         {
-            GameObject.Destroy(choiceCanvas.transform.GetChild(i).gameObject);
+            GameObject.Destroy(choicePanel.transform.GetChild(i).gameObject);
         }
     }
     
@@ -108,7 +111,6 @@ public class Kimmy : MonoBehaviour {
         TMP_Text storyText = Instantiate (textPrefab) as TMP_Text;
         storyText.text = text;
         storyText.font = dialogueFont;
-        storyText.transform.SetParent (dialogueCanvas.transform, false);
        
         if (text.Contains("Dana:"))
         {
@@ -141,13 +143,13 @@ public class Kimmy : MonoBehaviour {
             momSprite.SetActive(false);
         }
         
-        storyText.transform.SetParent (dialogueCanvas.transform, false);
+        storyText.transform.SetParent (dialoguePanel.transform, false);
     }
     
     Button CreateChoiceView (string text) {
         // Creates the button from a prefab
         Button choice = Instantiate(buttonPrefab) as Button;
-        choice.transform.SetParent(choiceCanvas.transform, false);
+        choice.transform.SetParent(choicePanel.transform, false);
 		
         // Gets the text from the button prefab
         TMP_Text choiceText = choice.GetComponentInChildren<TMP_Text> ();
