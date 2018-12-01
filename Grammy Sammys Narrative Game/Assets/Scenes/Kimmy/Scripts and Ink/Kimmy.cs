@@ -32,29 +32,37 @@ public class Kimmy : MonoBehaviour {
 
     private void Update()
     {
-        if (!Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && _story.canContinue)
         {
-            return;
-        }
+            RemoveChildren();
+            string text = _story.Continue();
+            text = text.Trim();
+            CreateContentView(text);
 
-        if (!_story.canContinue)
-        {
-            return;
-        }
-
-        string text = _story.Continue();
-        text = text.Trim();
-        CreateContentView(text);
-
-        if (_story.currentChoices.Count > 0)
-        {
-            foreach (Choice choice in _story.currentChoices)
+            if (_story.currentChoices.Count > 0)
             {
-                Button button = CreateChoiceView(choice.text.Trim());
-                Choice thisChoice = choice;
-                button.onClick.AddListener(delegate { OnClickChoiceButton(thisChoice); });
+                foreach (Choice choice in _story.currentChoices)
+                {
+                    Button button = CreateChoiceView(choice.text.Trim());
+                    Choice thisChoice = choice;
+                    button.onClick.AddListener(delegate { OnClickChoiceButton(thisChoice); });
+                }
             }
         }
+        else
+        {
+            return; 
+        }
+//        if (!Input.GetKeyDown(KeyCode.Space))
+//        {
+//            return;
+//        }
+//        if (!_story.canContinue)
+//        {
+//            return;
+//        }
+        
+        
 
 //        Debug.LogFormat("{0} with choices:\n {1}", text, choiceText);
     }
