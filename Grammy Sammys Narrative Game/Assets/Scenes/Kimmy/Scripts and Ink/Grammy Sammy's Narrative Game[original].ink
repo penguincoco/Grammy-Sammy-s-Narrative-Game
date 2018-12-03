@@ -147,11 +147,11 @@ Where would you like to go?
 
 === Store
 = Talk_to_Dean
-Dean:			Hey, Kid.
-Dana:			Hi, Dean. This is Kimmy. I’m babysitting her now.
-Dean:			Well lookit that, aren’t you all grown up. You gettin’ paid?
-Kimmy:			My mom pays Dana a quarter a day.
-Dana:			That’s right! I’m here to buy some things… I mean, I haven’t gotten paid yet. This is my first day. But I have some money saved up!
+Dean: Hey, Kid.
+Dana: Hi, Dean. This is Kimmy. I’m babysitting her now.
+Dean: Well lookit that, aren’t you all grown up. You gettin’ paid?
+Kimmy: My mom pays Dana a quarter a day.
+Dana: That’s right! I’m here to buy some things… I mean, I haven’t gotten paid yet. This is my first day. But I have some money saved up!
 Dean:			Hah, I wish I had that kinda discipline. I blew my budget on fabric last week.
 Dana:			I need to save up money. For college, you know! My mom would get so mad if I didn’t plan ahead.
 Dean:			Hah! Your mom’s got the right idea. I wish I’d saved up for college.

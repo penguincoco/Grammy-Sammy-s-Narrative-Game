@@ -21,11 +21,36 @@ public class Kimmy : MonoBehaviour {
     public GameObject danaSprite;
 
     public GameObject choicePanel;
-    public GameObject dialoguePanel; 
-    
+    public GameObject dialoguePanel;
+
+    public Color dana;
+    public Color mom;
+    public Color kimmy;
+    public Color kimmyMom;
+    public Color dean;
+    public Color donna;
+    public Color blythe;
+    public Color linda;
+    public Color janey;
+    public Color jimmy;
+
+    public AudioSource audioSource;
+    public AudioClip storeBell;
+    public AudioClip store;
+    public AudioClip background;
+    public AudioClip playground;
+
+    private bool atPlayground;
+    private bool atStore;
     
     private void Start()
     {
+        atPlayground = false;
+        atStore = false;
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = background;
+        
+        audioSource.Play();
         _story = new Story(_inkJsonAsset.text);
         RemoveChildren();
     }
@@ -38,7 +63,6 @@ public class Kimmy : MonoBehaviour {
             string text = _story.Continue();
             text = text.Trim();
             CreateContentView(text);
-
             if (_story.currentChoices.Count > 0)
             {
                 foreach (Choice choice in _story.currentChoices)
@@ -49,22 +73,18 @@ public class Kimmy : MonoBehaviour {
                 }
             }
         }
-        else
-        {
-            return; 
-        }
-//        if (!Input.GetKeyDown(KeyCode.Space))
-//        {
-//            return;
-//        }
-//        if (!_story.canContinue)
-//        {
-//            return;
-//        }
-        
-        
 
-//        Debug.LogFormat("{0} with choices:\n {1}", text, choiceText);
+        if (atPlayground)
+        {
+            audioSource.clip = playground;
+            audioSource.Play();
+        }
+
+        if (atStore)
+        {
+            audioSource.clip = store;
+            audioSource.Play();
+        }
     }
     
     void RemoveChildren () {
@@ -92,27 +112,27 @@ public class Kimmy : MonoBehaviour {
         
         if (text.Contains("Dana:"))
         {
-            choiceText.color = Color.red;
+            choiceText.color = dana;
             danaSprite.SetActive(true);
             momSprite.SetActive(false);
         }
         else if (text.Contains("Kimmy's Mom:"))
         {
 //            choice.GetComponent<Image>().color = Color.black;
-            choiceText.color = Color.green;
+            choiceText.color = kimmyMom;
             danaSprite.SetActive(false);
             momSprite.SetActive(false);
         }
         else if (text.Contains("Mom:"))
         {
 //            choice.GetComponent<Image>().color = Color.black;
-            choiceText.color = Color.blue;
+            choiceText.color = mom;
             danaSprite.SetActive(false);
             momSprite.SetActive(true);
         }
         else if (text.Contains("Kimmy:"))
         {
-            choiceText.color = Color.magenta;
+            choiceText.color = kimmy;
             danaSprite.SetActive(false);
             momSprite.SetActive(false);
         }
@@ -131,6 +151,21 @@ public class Kimmy : MonoBehaviour {
     
     void OnClickChoiceButton(Choice choice)
     {
+        if (choice.text.Equals("Store"))
+        {
+            audioSource.PlayOneShot(storeBell);
+            atStore = true;
+        }
+
+        if (choice.text.Equals("Playground"))
+        {
+            atPlayground = true;
+        }
+        else
+        {
+            atPlayground = false; 
+        }
+        
         _story.ChooseChoiceIndex(choice.index);
         RemoveChildren();
     }
@@ -142,25 +177,55 @@ public class Kimmy : MonoBehaviour {
        
         if (text.Contains("Dana:"))
         {
-            storyText.color = Color.red;
+            storyText.color = dana; 
             danaSprite.SetActive(true);
             momSprite.SetActive(false);
         }
         else if (text.Contains("Kimmy's Mom:"))
         {
-            storyText.color = Color.green;
+            storyText.color = kimmyMom;
             danaSprite.SetActive(false);
             momSprite.SetActive(false);
         }
         else if (text.Contains("Mom:"))
         {
-            storyText.color = Color.blue;
+            storyText.color = mom;
             danaSprite.SetActive(false);
             momSprite.SetActive(true);
         }
         else if (text.Contains("Kimmy:"))
         {
-            storyText.color = Color.magenta;
+            storyText.color = kimmy; 
+            danaSprite.SetActive(false);
+            momSprite.SetActive(false);
+        }
+        else if (text.Contains("Dean:"))
+        {
+            storyText.color = dean;
+            danaSprite.SetActive(false);
+            momSprite.SetActive(false);
+        }
+        else if (text.Contains("Donna:"))
+        {
+            storyText.color = donna;
+            danaSprite.SetActive(false);
+            momSprite.SetActive(false);
+        }
+        else if (text.Contains("Blythe:"))
+        {
+            storyText.color = blythe;
+            danaSprite.SetActive(false);
+            momSprite.SetActive(false);
+        }
+        else if (text.Contains("Linda:"))
+        {
+            storyText.color = linda;
+            danaSprite.SetActive(false);
+            momSprite.SetActive(false);
+        }
+        else if (text.Contains("Janey:"))
+        {
+            storyText.color = janey;
             danaSprite.SetActive(false);
             momSprite.SetActive(false);
         }
