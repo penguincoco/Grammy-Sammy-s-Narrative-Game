@@ -893,10 +893,10 @@ MonoBehaviour:
   janey: {r: 0.5803922, g: 0.34509805, b: 0.28235295, a: 0}
   jimmy: {r: 0.27058825, g: 0.6313726, b: 0.87058824, a: 0}
   audioSource: {fileID: 763318442}
-  storeBell: {fileID: 8300000, guid: 39e5f391353d549fd804c4be752c3914, type: 3}
-  store: {fileID: 8300000, guid: 688c4c29cbcaa465196ecaf600cd22f7, type: 3}
-  background: {fileID: 8300000, guid: 318f21877c6a94e11a72812c1438efbc, type: 3}
-  playground: {fileID: 8300000, guid: b67393e02399a40688517388725a3915, type: 3}
+  storeBell: {fileID: 8300000, guid: 7712e4309579a4070a1d826b9b28f111, type: 3}
+  store: {fileID: 8300000, guid: 83d8d64f1b52a4dc3a81571c728e1b88, type: 3}
+  background: {fileID: 8300000, guid: 8f7ed8f6717644b2eb5f7054116eb81a, type: 3}
+  playground: {fileID: 8300000, guid: 6791ccc22136c4667bb7f7d1544ec4f1, type: 3}
 --- !u!4 &763318441
 Transform:
   m_ObjectHideFlags: 0
@@ -1628,36 +1628,6 @@ Prefab:
     - target: {fileID: 114865587574567190, guid: 5aa0418408243443ea2a8c80e37196c2,
         type: 2}
       propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114865587574567190, guid: 5aa0418408243443ea2a8c80e37196c2,
-        type: 2}
-      propertyPath: m_text
-      value: Dialogue Text
-      objectReference: {fileID: 0}
-    - target: {fileID: 114865587574567190, guid: 5aa0418408243443ea2a8c80e37196c2,
-        type: 2}
-      propertyPath: m_textInfo.characterCount
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 114865587574567190, guid: 5aa0418408243443ea2a8c80e37196c2,
-        type: 2}
-      propertyPath: m_textInfo.wordCount
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114865587574567190, guid: 5aa0418408243443ea2a8c80e37196c2,
-        type: 2}
-      propertyPath: m_textInfo.lineCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114865587574567190, guid: 5aa0418408243443ea2a8c80e37196c2,
-        type: 2}
-      propertyPath: m_textInfo.pageCount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114865587574567190, guid: 5aa0418408243443ea2a8c80e37196c2,
-        type: 2}
-      propertyPath: m_textInfo.spaceCount
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
