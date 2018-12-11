@@ -78,7 +78,7 @@ public class Kimmy : MonoBehaviour {
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && _story.canContinue)
+        if (Input.GetMouseButtonDown(0) && _story.canContinue)
         {
             RemoveChildren();
             string text = _story.Continue();
@@ -186,13 +186,13 @@ public class Kimmy : MonoBehaviour {
         _story.ChooseChoiceIndex(choice.index);
         RemoveChildren();
         
-        //generate the next line of dialogue  
-//        if (_story.canContinue)
-//        {
-//            String text = _story.Continue();
-//            text = text.Trim();
-//            CreateContentView(text);
-//        }
+//        generate the next line of dialogue  
+        if (_story.canContinue)
+        {
+            String text = _story.Continue();
+            text = text.Trim();
+            CreateContentView(text);
+        }
     }
     
     void CreateContentView (string text) {
