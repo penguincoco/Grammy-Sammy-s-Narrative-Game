@@ -137,39 +137,6 @@ public class Kimmy : MonoBehaviour {
         choiceText.text = text;
         choiceText.font = dialogueFont;
         
-//        if (text.Contains("Dana:"))
-//        {
-//            choiceText.color = dana;
-//            danaSprite.SetActive(true);
-//            momSprite.SetActive(false);
-//        }
-//        else if (text.Contains("Kimmy's Mom:"))
-//        {
-////            choice.GetComponent<Image>().color = Color.black;
-//            choiceText.color = kimmyMom;
-//            danaSprite.SetActive(false);
-//            momSprite.SetActive(false);
-//        }
-//        else if (text.Contains("Mom:"))
-//        {
-////            choice.GetComponent<Image>().color = Color.black;
-//            choiceText.color = mom;
-//            danaSprite.SetActive(false);
-//            momSprite.SetActive(true);
-//        }
-//        else if (text.Contains("Kimmy:"))
-//        {
-//            choiceText.color = kimmy;
-//            danaSprite.SetActive(false);
-//            momSprite.SetActive(false);
-//        }
-//        else
-//        {
-//            choiceText.color = Color.black;
-//            danaSprite.SetActive(false);
-//            momSprite.SetActive(false);
-//        }
-
         HorizontalLayoutGroup layoutGroup = choice.GetComponent <HorizontalLayoutGroup> ();
         layoutGroup.childForceExpandHeight = false;
         
@@ -222,67 +189,15 @@ public class Kimmy : MonoBehaviour {
        
         if (text.Contains("Dana:"))
         {
-//            storyText.color = dana;
             danaSprite.transform.position = danaStartLocation + Vector3.up;
             momSprite.transform.position = momStartLocation;
         }
         else if (text.Contains("Mom:"))
         {
-//            storyText.color = mom;
             momSprite.transform.position = momStartLocation + Vector3.up;
             danaSprite.transform.position = danaStartLocation;
-//            danaSprite.SetActive(false);
-//            momSprite.SetActive(true);
         }
-//        else if (text.Contains("Kimmy's Mom:"))
-//        {
-//            storyText.color = kimmyMom;
-//            danaSprite.SetActive(false);
-//            momSprite.SetActive(false);
-//        }
-//        else if (text.Contains("Kimmy:"))
-//        {
-//            storyText.color = kimmy; 
-//            danaSprite.SetActive(false);
-//            momSprite.SetActive(false);
-//        }
-//        else if (text.Contains("Dean:"))
-//        {
-//            storyText.color = dean;
-//            danaSprite.SetActive(false);
-//            momSprite.SetActive(false);
-//        }
-//        else if (text.Contains("Donna:"))
-//        {
-//            storyText.color = donna;
-//            danaSprite.SetActive(false);
-//            momSprite.SetActive(false);
-//        }
-//        else if (text.Contains("Blythe:"))
-//        {
-//            storyText.color = blythe;
-//            danaSprite.SetActive(false);
-//            momSprite.SetActive(false);
-//        }
-//        else if (text.Contains("Linda:"))
-//        {
-//            storyText.color = linda;
-//            danaSprite.SetActive(false);
-//            momSprite.SetActive(false);
-//        }
-//        else if (text.Contains("Janey:"))
-//        {
-//            storyText.color = janey;
-//            danaSprite.SetActive(false);
-//            momSprite.SetActive(false);
-//        }
-//        else
-//        {
-//            storyText.color = Color.black;
-//            danaSprite.SetActive(false);
-//            momSprite.SetActive(false);
-//        }
-//        
+
         storyText.transform.SetParent (dialoguePanel.transform, false);
         Debug.Log(storyText.text);
     }

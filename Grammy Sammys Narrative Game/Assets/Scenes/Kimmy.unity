@@ -881,7 +881,7 @@ MonoBehaviour:
   janeySprite: {fileID: 684717643}
   choicePanel: {fileID: 1150636941}
   dialoguePanel: {fileID: 1394064381}
-  textColor: {r: 0, g: 0, b: 0, a: 0}
+  textColor: {r: 0.24528301, g: 0.13689248, b: 0.07751868, a: 1}
   dana: {r: 0.3882353, g: 0.21176471, b: 0.38431373, a: 1}
   mom: {r: 0.9433962, g: 0.19134924, b: 0.2548616, a: 1}
   kimmy: {r: 0.8509804, g: 0.35686275, b: 0.6039216, a: 1}
