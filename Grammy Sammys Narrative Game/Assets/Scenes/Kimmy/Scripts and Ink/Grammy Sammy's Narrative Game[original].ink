@@ -6,6 +6,7 @@ VAR choice1 = false
 VAR choice2 = false
 VAR choice3 = false
 VAR choice4 = false
+VAR player = "Kimmy"
 
 Late 1960s, Massachusetts.
 
@@ -24,7 +25,7 @@ Dana: Her name is Kimmy! -> Kimmy1
 + [It seems that Kimmy has something to say.]
 ...
 (Kimmy remains silent.)
-Kimmy: 			...
+Kimmy: ...
 
 -> Nope
 
@@ -55,9 +56,8 @@ Kimmy: Ferry Street... I untied myself from the porch so I could go for a walk�
 +[How strange] -> Odd
 
 = Odd
-Mom: It’s ok dear, let’s go to your house Kimmy… you said it’s on Ferry Street? Your parents are probably worried. -> To_Kimmys
+Mom: It’s ok dear, let’s go to your house Kimmy… you said it’s on Ferry Street? Your parents are probably worried. 
 
-= To_Kimmys
 +[Head to Kimmy's house] -> Intro_Part_2
 
 === Intro_Part_2
@@ -80,7 +80,8 @@ Dana: Yes! I’d love to be friends, Kimmy. Can I come by and play with you tomo
 + [Kimmy's mom looks rather excited] -> continue2
 
 = continue2
-Kimmy's Mom: I've been looking for a babysitter, actually. Her grandma was helping with that before, but she... well, she can't anymore. Kimmy's normally alright in her harness on the porch, but she's getting a little old for that... If you'd like to play with Kimmy tomorrow, I'd be happy to pay you a quarter to keep an eye on her.
+Kimmy's Mom: I've been looking for a babysitter, actually. Her grandma was helping with that before, but she... well, she can't anymore. Kimmy's normally alright in her harness on the porch... 
+Kimmy's Mom: but she's getting a little old for that... If you'd like to play with Kimmy tomorrow, I'd be happy to pay you a quarter to keep an eye on her.
 
 + [ Accept the job!] -> continue3
 
@@ -138,7 +139,6 @@ Kimmy: ...!
 Where would you like to go? 
 + [Store] -> Store
 + [Playground] -> Playground
-+ [Downtown] -> Downtown
 + [Quit] -> Done
 
 === Kimmy_House
@@ -152,21 +152,21 @@ Dana: Hi, Dean. This is Kimmy. I’m babysitting her now.
 Dean: Well lookit that, aren’t you all grown up. You gettin’ paid?
 Kimmy: My mom pays Dana a quarter a day.
 Dana: That’s right! I’m here to buy some things… I mean, I haven’t gotten paid yet. This is my first day. But I have some money saved up!
-Dean:			Hah, I wish I had that kinda discipline. I blew my budget on fabric last week.
-Dana:			I need to save up money. For college, you know! My mom would get so mad if I didn’t plan ahead.
-Dean:			Hah! Your mom’s got the right idea. I wish I’d saved up for college.
-Dana:			So what did you spend all your money on? Your sewing classes?
-Dean:			Nah, that’s over. I’m workin’ on some Halloween costumes for my cousins… and some new pants for myself. You know, gotta apply those skills somehow.
-Kimmy:			I didn’t know people made clothes!
-Dean:			They do, Kimmy, they do. I make sweaters, dresses, hats--you name it.
-Dana:			You should sell your clothes at Jordan Marsh! That’s where I always find the nicest clothes.
-Dean:			Hah! That’s a long ways off for me. But maybe someday… anyways, what can I get for ya?
+Dean: Hah, I wish I had that kinda discipline. I blew my budget on fabric last week.
+Dana: I need to save up money. For college, you know! My mom would get so mad if I didn’t plan ahead.
+Dean: Hah! Your mom’s got the right idea. I wish I’d saved up for college.
+Dana: So what did you spend all your money on? Your sewing classes?
+Dean: Nah, that’s over. I’m workin’ on some Halloween costumes for my cousins… and some new pants for myself. You know, gotta apply those skills somehow.
+Kimmy: I didn’t know people made clothes!
+Dean: They do, Kimmy, they do. I make sweaters, dresses, hats--you name it.
+Dana: You should sell your clothes at Jordan Marsh! That’s where I always find the nicest clothes.
+Dean: Hah! That’s a long ways off for me. But maybe someday… anyways, what can I get for ya?
 -> Purchase 
 
 = Exit_Shop
-Dana:			Thanks, Dean!
-Kimmy:			Thank you Mr. Dean!
-Dean:			Bye bye girls. Have fun.
+Dana: Thanks, Dean!
+Kimmy: Thank you Mr. Dean!
+Dean: Bye bye girls. Have fun.
 
 -> Map
 
@@ -203,81 +203,55 @@ You don't have enough money! :(
 
 === Linda
 
-Kimmy:			Hi Linda... I haven’t seen you in a while.
-Linda:			I went to visit my auntie right when school ended.
-Dana:			Hi, Linda. Do you know Kimmy?
-Linda:			We’re neighbors.
-Kimmy:			Did you go far away?
-Linda:			Auntie’s in Boston.
-Kimmy:			That sounds far...
-Dana:			It’s not so far. You can even ride your bike there. Sometimes my sisters and I go. We like to go explore all the clothes shops. Like Filene's.
-Linda:			I don’t really go shopping, unless it’s for stuffed animals.
-Kimmy:			Dana is babysitting me, so she can go shopping with the quarters my mom gives her!
-Linda:			Oh, having a job is good. When I’m a little older I want to get one at an animal shelter or something. I like playing with dogs.
-Kimmy:			I love dogs.
-Dana:			We’re looking for people to play games with. Want to play a game with us, Linda?
-Linda:			I guess so. I was playing with Donna earlier, but I could play some more.
+Kimmy: Hi Linda... I haven’t seen you in a while.
+Linda: I went to visit my auntie right when school ended.
+Dana: Hi, Linda. Do you know Kimmy?
+Linda: We’re neighbors.
+Kimmy: Did you go far away?
+Linda: Auntie’s in Boston.
+Kimmy: That sounds far...
+Dana: It’s not so far. You can even ride your bike there. Sometimes my sisters and I go. We like to go explore all the clothes shops. Like Filene's.
+Linda: I don’t really go shopping, unless it’s for stuffed animals.
+Kimmy: Dana is babysitting me, so she can go shopping with the quarters my mom gives her!
+Linda: Oh, having a job is good. When I’m a little older I want to get one at an animal shelter or something. I like playing with dogs.
+Kimmy: I love dogs.
+Dana: We’re looking for people to play games with. Want to play a game with us, Linda?
+Linda: I guess so. I was playing with Donna earlier, but I could play some more.
 -> Try_Play
 
 === Janey
 
-Dana:			Hey Janey, how are you?
-Janey:			You know the Grenada movie theatre? I got a summer job there. I started last week.
-Kimmy:			Wow… my mom took me there once...
-Janey:			What did you see? I go to the movies a lot, so I bet I saw it too.
-Kimmy:			Oh… we saw the movie with the… Uh... the fairy godmother and the shoe…
-Janey:			Cinderella?
-Kimmy:			Yeah... and we saw Mary Poppins.
-Janey:			I saw that at The Grenada too. It was so great.
-Dana:			If we go see a movie there, where would we find you?
-Janey:			I’m at the snack counter, but I’m too little to be a cashier. I’m helping make popcorn… just until I’m old enough to do something more serious.
-Kimmy:			I love popcorn!
-Janey:			Yeah, it’s pretty awesome to be at the snack counter. I love popcorn. I can have free soda whenever I want, too.
-Dana:			I also have a summer job! I’m babysitting Kimmy! I wasn’t planning on working, but I think it’s great.
-Janey:			My mom said a summer job is important. I didn’t want her to think I was lazy, and I love movies so I got my cousin to help me get the job. He sells tickets there.
-Dana:			I’m glad I won’t be lazy this summer. I think I’m getting too old to be lazy. I mean, I’m going into the 5th grade.
-Janey:			Yeah, it’s more fun to be out with people who aren’t just teachers and classmates too.
-Janey:			By the way, I’m not working today. Wanna play together?
--> Try_Play
+Dana: Hey Janey, how are you?
+Janey: You know the Grenada movie theatre? I got a summer job there. I started last week.
+Kimmy: Wow… my mom took me there once...
+Janey: What did you see? I go to the movies a lot, so I bet I saw it too.
+Kimmy: Oh… we saw the movie with the… Uh... the fairy godmother and the shoe…
+Janey: Cinderella?
+Kimmy: Yeah... and we saw Mary Poppins.
+Janey: I saw that at The Grenada too. It was so great.
+Dana: If we go see a movie there, where would we find you?
+Janey: I’m at the snack counter, but I’m too little to be a cashier. I’m helping make popcorn… just until I’m old enough to do something more serious.
+Kimmy: I love popcorn!
+Janey: Yeah, it’s pretty awesome to be at the snack counter. I love popcorn. I can have free soda whenever I want, too.
+Dana: I also have a summer job! I’m babysitting Kimmy! I wasn’t planning on working, but I think it’s great.
+Janey: My mom said a summer job is important. I didn’t want her to think I was lazy, and I love movies so I got my cousin to help me get the job. He sells tickets there.
+Dana: I’m glad I won’t be lazy this summer. I think I’m getting too old to be lazy. I mean, I’m going into the 5th grade.
+Janey: Yeah, it’s more fun to be out with people who aren’t just teachers and classmates too...
+Janey: Anyways, I have work now. Talk to you later! 
+-> Playground
 
 === Blythe
 
-Kimmy:			P-please go away...
-Dana:			Blythe, knock it off! I’m a babysitter so you can’t bug me anymore, got it?
-Blythe:			Poor Dana. Poor Kimmy. You can’t get away from me! I’m the bicycle lord.
-Blythe:			I’ll only stop following you if you play a game with me.
-Dana:			No.
-Blythe:			Yes.
-Dana:			Fine.
-Blythe:			That’s right.
--> Try_Play
+Kimmy: P-please go away...
+Dana: Blythe, knock it off! I’m a babysitter so you can’t bug me anymore, got it?
+Blythe:	Poor Dana. Poor Kimmy. You can’t get away from me! I’m the bicycle lord.
+Blythe:	I’ll only stop following you if you play a game with me.
+Dana: No.
+Blythe:	Yes.
+Dana: No.
+Blythe: Oh.
 
-=== Downtown 
-+ [Jimmy] -> Jimmy
-+ [Open Map] -> Map
-
-=== Jimmy 
-
-Jimmy:			...Hi Kimmy.
-Kimmy:			Hi Jimmy…
-Dana:			...
-Dana:			Whatcha reading there, Jimmy? Looks neat.
-Jimmy:			M-my comic… Archie...
-Dana:			Some of my friends at school read that! Did you get it at the bookstore?
-Jimmy:			Yeah!
-Kimmy:			I’ve never read a comic before.
-Jimmy:			Y-you can borrow one of mine whenever you like, Kimmy! And then we can uh…
-Jimmy:			We can talk about it and pick our--our favorite characters!
-Dana:			Wow! That’s so nice of you, Jimmy! Guess you have a new friend, Kimmy!
-Kimmy:			I think… that sounds fun...
-Jimmy:			A-anytime, anytime… um…
-Dana:			Say, are you free to play a game with us, Jimmy? We’ll teach you something new!
-Jimmy:			I’m not very good at games… b-but, if Kimmy wants me to...
-Dana:			I’m teaching Kimmy games and helping her make friends this summer.
-Jimmy:			If you’re learning games, can I play games with you on the playground sometimes too, Kimmy? Once school starts?
-Kimmy:			...Ok. I don’t play much at school but I will with you if you want.
-Jimmy:			What! Oh! Yes… yes please…
--> Try_Play
+-> Playground
 
 === Try_Play
 + [play with chalk]
@@ -288,14 +262,14 @@ Jimmy:			What! Oh! Yes… yes please…
 }
 
 === No_Games 
-Dana:			Oh no! I’m sorry… I thought I had some stuff to play games with in my bag… but it looks like I ran out.
-Kimmy:			Oh no...
-Dana:			It’s ok! Kimmy, let’s run to the store and buy some game pieces! We’ll be right back!
+Dana: Oh no! I’m sorry… I thought I had some stuff to play games with in my bag… but it looks like I ran out.
+Kimmy: Oh no...
+Dana: It’s ok! Kimmy, let’s run to the store and buy some game pieces! We’ll be right back!
 -> Map
 
 === Play 
-Linda:			Hopscotch sounds pretty easy, but... I guess I'll try it
-Dana: 			Okay, I'll teach you how to play...
+Linda: Hopscotch sounds pretty easy, but... I guess I'll try it
+Dana: Okay, I'll teach you how to play...
 
 -> Choice1
 
@@ -337,29 +311,29 @@ Dana: 			Okay, I'll teach you how to play...
 === GameOver
 
 = correct 
-Linda: 			That sounds about right!
+Linda: That sounds about right!
 
 * [play Hopscotch]
 
-Dana:			We did it!
-Linda:			I usually only play games with my dad or brothers, but that was fun.
-Kimmy:			Th--thanks for playing with us, Linda.
-Linda:			I’m going to visit my auntie again in a few weeks, so I’ll see if maybe she’ll want to learn hopscotch thanks for teaching it to me.
-Dana:			Oh, thank you Linda. You’re a good student!
-Linda:			I like to learn stuff. I’m glad it’s summer break though… we never get assigned anything fun in school. But my auntie gave me some biology books to read and it’s really fun.
-Kimmy:			What’s… biology?
-Linda:			It’s about studying living stuff like plants and animals, and people sometimes too.
-Dana:			I hope I get to take biology soon. I like math and science classes a lot.
-Kimmy:			If I could study dogs, I think I’d be happy...
+Dana: We did it!
+Lina: I usually only play games with my dad or brothers, but that was fun.
+Kimmy: Th--thanks for playing with us, Linda.
+Linda: I’m going to visit my auntie again in a few weeks, so I’ll see if maybe she’ll want to learn hopscotch thanks for teaching it to me.
+Dana: Oh, thank you Linda. You’re a good student!
+Linda: I like to learn stuff. I’m glad it’s summer break though… we never get assigned anything fun in school. But my auntie gave me some biology books to read and it’s really fun.
+Kimmy: What’s… biology?
+Linda: It’s about studying living stuff like plants and animals, and people sometimes too.
+Dana: I hope I get to take biology soon. I like math and science classes a lot.
+Kimmy: If I could study dogs, I think I’d be happy...
 
 ~ chalk = false 
-Dana:			Wasn't that fun, Kimmy!
-Kimmy:			Y-yes…
-Dana:			I think this deserves a sticker. You did a good job! We're gonna keep making you lots of friends...!
+Dana: Wasn't that fun, Kimmy!
+Kimmy: Y-yes…
+Dana: I think this deserves a sticker. You did a good job! We're gonna keep making you lots of friends...!
 -> Playground
 
 = incorrect 
-Linda:			That doesn't sound right...
+Linda: That doesn't sound right...
 
 -> Playground
 
