@@ -205,6 +205,13 @@ public class Kimmy : MonoBehaviour {
         _story.ChooseChoiceIndex(choice.index);
         RemoveChildren();
         
+        //generate the next line of dialogue  
+        if (_story.canContinue)
+        {
+            String text = _story.Continue();
+            text = text.Trim();
+            CreateContentView(text);
+        }
     }
     
     void CreateContentView (string text) {
