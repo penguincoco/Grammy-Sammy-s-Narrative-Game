@@ -30,17 +30,6 @@ public class Kimmy : MonoBehaviour {
 
     public Color textColor;
     
-    public Color dana;
-    public Color mom;
-    public Color kimmy;
-    public Color kimmyMom;
-    public Color dean;
-    public Color donna;
-    public Color blythe;
-    public Color linda;
-    public Color janey;
-    public Color jimmy;
-
     public AudioSource audioSource;
     public AudioClip storeBell;
     public AudioClip store;
@@ -50,9 +39,15 @@ public class Kimmy : MonoBehaviour {
     private bool atPlayground;
     private bool atStore;
     private bool atHome;
+    private bool openMap;
+
+    private bool withLinda; 
 
     private Vector3 danaStartLocation;
-    private Vector3 momStartLocation; 
+    private Vector3 momStartLocation;
+    private Vector3 kimmyMomStartLocation;
+
+    private GameObject[] characters;
 
     private void Start()
     {
@@ -68,6 +63,7 @@ public class Kimmy : MonoBehaviour {
 
         danaStartLocation = danaSprite.transform.position;
         momStartLocation = momSprite.transform.position;
+        kimmyMomStartLocation = kimmyMomSprite.transform.position;
 
         if (_story.canContinue)
         {
@@ -75,6 +71,9 @@ public class Kimmy : MonoBehaviour {
             text = text.Trim();
             CreateContentView(text);
         }
+
+        characters = new GameObject[]
+            {momSprite, danaSprite, kimmySprite, kimmyMomSprite, deanSprite, lindaSprite, blytheSprite, janeySprite};
     }
 
     private void Update()
@@ -98,6 +97,7 @@ public class Kimmy : MonoBehaviour {
 
         if (atHome)
         {
+            Debug.Log("entering intro scene");
             intro();
         }
 
@@ -105,6 +105,11 @@ public class Kimmy : MonoBehaviour {
         {
             audioSource.clip = playground;
             audioSource.Play();
+        }
+
+        if (withLinda)
+        {
+            setLinda();
         }
 
         if (atStore)
@@ -145,13 +150,13 @@ public class Kimmy : MonoBehaviour {
     
     void OnClickChoiceButton(Choice choice)
     {
-        if (choice.text.Equals("Store"))
+        if (choice.text.Contains("Store"))
         {
             audioSource.PlayOneShot(storeBell);
             atStore = true;
         }
 
-        if (choice.text.Equals("Playground"))
+        if (choice.text.Contains("Playground"))
         {
             atPlayground = true;
         }
@@ -160,7 +165,7 @@ public class Kimmy : MonoBehaviour {
             atPlayground = false; 
         }
 
-        if (choice.text.Equals("Head to Kimmy's House"))
+        if (choice.text.Contains("Head to Kimmy's house"))
         {
             atHome = true; 
         }
@@ -168,17 +173,26 @@ public class Kimmy : MonoBehaviour {
         {
             atHome = false;
         }
+
+        if (choice.text.Contains("Linda"))
+        {
+            withLinda = true;
+        }
+        else
+        {
+            withLinda = false; 
+        }
         
         _story.ChooseChoiceIndex(choice.index);
         RemoveChildren();
         
         //generate the next line of dialogue  
-        if (_story.canContinue)
-        {
-            String text = _story.Continue();
-            text = text.Trim();
-            CreateContentView(text);
-        }
+//        if (_story.canContinue)
+//        {
+//            String text = _story.Continue();
+//            text = text.Trim();
+//            CreateContentView(text);
+//        }
     }
     
     void CreateContentView (string text) {
@@ -197,6 +211,11 @@ public class Kimmy : MonoBehaviour {
             momSprite.transform.position = momStartLocation + Vector3.up;
             danaSprite.transform.position = danaStartLocation;
         }
+        else if (text.Contains("Kimmy's Mom:"))
+        {
+            kimmyMomSprite.transform.position = momStartLocation + Vector3.up;
+            kimmyMomSprite.transform.position = danaStartLocation;
+        }
 
         storyText.transform.SetParent (dialoguePanel.transform, false);
         Debug.Log(storyText.text);
@@ -204,6 +223,7 @@ public class Kimmy : MonoBehaviour {
 
     void intro()
     {
+        Debug.Log("Kimmy's mom should be on screen");
         danaSprite.SetActive(true);
         momSprite.SetActive(true);
         kimmySprite.SetActive(true);
@@ -226,6 +246,20 @@ public class Kimmy : MonoBehaviour {
         kimmyMomSprite.SetActive(false);
         janeySprite.SetActive(false);
         lindaSprite.SetActive(false);
+        deanSprite.SetActive(false);
+    }
+
+    void setLinda()
+    {
+        Debug.Log("We're talking to Linda");
+        kimmySprite.SetActive(true);
+        danaSprite.SetActive(true);
+        lindaSprite.SetActive(true);
+        
+        momSprite.SetActive(false);
+        kimmyMomSprite.SetActive(false);
+        janeySprite.SetActive(false);
+        blytheSprite.SetActive(false);
         deanSprite.SetActive(false);
     }
 }
