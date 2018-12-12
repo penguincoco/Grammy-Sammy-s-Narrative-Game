@@ -64,8 +64,9 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Dialogue Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8756aaaa13e1a443fad128d13ecaa3da, type: 2}
+  m_sharedMaterial: {fileID: 21781919720085672, guid: 8756aaaa13e1a443fad128d13ecaa3da,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -127,7 +128,7 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 11.29793, y: 0, z: 11.695958, w: -37.51718}
+  m_margin: {x: 25.457243, y: 0, z: 24.2819, w: -37.51718}
   m_textInfo:
     textComponent: {fileID: 114766407074877208}
     characterCount: 13
@@ -201,5 +202,5 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 312.5, y: -87.5}
-  m_SizeDelta: {x: 625, y: 22.35}
+  m_SizeDelta: {x: 625, y: 21.81}
   m_Pivot: {x: 0.5, y: 0.5}

@@ -14,6 +14,7 @@ public class Kimmy : MonoBehaviour {
     
     public TMP_Text textPrefab;
     public TMP_FontAsset dialogueFont;
+    public int textFontSize;
     public Button buttonPrefab;
     
     public GameObject momSprite;
@@ -46,6 +47,7 @@ public class Kimmy : MonoBehaviour {
     private Vector3 danaStartLocation;
     private Vector3 momStartLocation;
     private Vector3 kimmyMomStartLocation;
+    private Vector3 kimmyStartLocation;
 
     private GameObject[] characters;
 
@@ -78,6 +80,11 @@ public class Kimmy : MonoBehaviour {
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            Debug.Log("Returning to main menu");
+            SceneManager.LoadScene("Main Menu");
+        }
         if (Input.GetMouseButtonDown(0) && _story.canContinue)
         {
             RemoveChildren();
@@ -141,6 +148,7 @@ public class Kimmy : MonoBehaviour {
         TMP_Text choiceText = choice.GetComponentInChildren<TMP_Text> ();
         choiceText.text = text;
         choiceText.font = dialogueFont;
+//        choiceText.fontSize = textFontSize;
         
         HorizontalLayoutGroup layoutGroup = choice.GetComponent <HorizontalLayoutGroup> ();
         layoutGroup.childForceExpandHeight = false;
@@ -199,22 +207,32 @@ public class Kimmy : MonoBehaviour {
         TMP_Text storyText = Instantiate (textPrefab) as TMP_Text;
         storyText.text = text;
         storyText.font = dialogueFont;
-        storyText.color = textColor;
+//        storyText.fontSize = textFontSize;
        
         if (text.Contains("Dana:"))
         {
             danaSprite.transform.position = danaStartLocation + Vector3.up;
             momSprite.transform.position = momStartLocation;
+            kimmyMomSprite.transform.position = kimmyMomStartLocation;
         }
         else if (text.Contains("Mom:"))
         {
             momSprite.transform.position = momStartLocation + Vector3.up;
             danaSprite.transform.position = danaStartLocation;
+            kimmyMomSprite.transform.position = kimmyMomStartLocation;
         }
         else if (text.Contains("Kimmy's Mom:"))
         {
-            kimmyMomSprite.transform.position = momStartLocation + Vector3.up;
+            kimmyMomSprite.transform.position = kimmyMomStartLocation + Vector3.up;
             kimmyMomSprite.transform.position = danaStartLocation;
+            momSprite.transform.position = momStartLocation;
+        }
+        else if (text.Contains("Kimmy:"))
+        {
+            kimmySprite.transform.position = kimmyStartLocation + Vector3.up;
+            kimmyMomSprite.transform.position = danaStartLocation;
+            momSprite.transform.position = momStartLocation;
+            kimmyMomSprite.transform.position = kimmyMomStartLocation;
         }
 
         storyText.transform.SetParent (dialoguePanel.transform, false);
