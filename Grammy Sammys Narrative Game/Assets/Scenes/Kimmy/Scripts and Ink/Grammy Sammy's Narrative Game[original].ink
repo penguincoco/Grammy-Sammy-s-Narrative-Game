@@ -133,7 +133,7 @@ Dana: Well, let’s go become her friend! There's lots of other kids around, too
 Dana: Come on, let’s go!
 Kimmy: ...!
 
-+ [Open map] -> Map
++ [Open Map] -> Map
 
 === Map
 Where would you like to go? 
@@ -301,11 +301,13 @@ Dana: Okay, I'll teach you how to play...
 -> Choice4
 
 = Choice4
-+ You win if you pick up the most snacks -> GameOver.incorrect
++ You win if you pick up the most snacks 
+-> GameOver.incorrect
 + You win if you pick up your rock without falling or tossing it outside of the column ten times 
 ~ choice4 = true 
 -> GameOver.check
-+ You win if you finish ten turns without breaking more than one egg -> GameOver.incorrect
++ You win if you finish ten turns without breaking more than one egg 
+-> GameOver.incorrect
 
 
 === GameOver

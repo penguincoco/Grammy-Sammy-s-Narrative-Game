@@ -14,7 +14,6 @@ public class Kimmy : MonoBehaviour {
     
     public TMP_Text textPrefab;
     public TMP_FontAsset dialogueFont;
-    public int textFontSize;
     public Button buttonPrefab;
     
     public GameObject momSprite;
@@ -28,13 +27,12 @@ public class Kimmy : MonoBehaviour {
 
     public GameObject choicePanel;
     public GameObject dialoguePanel;
-
-    public Color textColor;
     
     public AudioSource audioSource;
+    public AudioClip mapSound; 
     public AudioClip click; 
     public AudioClip storeBell;
-    public AudioClip bought;
+    public AudioClip boughtSound;
     public AudioClip store;
     public AudioClip background;
     public AudioClip playground;
@@ -57,6 +55,11 @@ public class Kimmy : MonoBehaviour {
     private Vector3 kimmyStartLocation;
 
     private bool wow;
+
+    public GameObject storeBackground;
+    public GameObject playgroundBackground;
+    public GameObject mapBackground;
+    public GameObject houseBackground;
 
     private GameObject[] characters;
 
@@ -119,49 +122,12 @@ public class Kimmy : MonoBehaviour {
             choiceClicked = false;
         }
 
-        if (atHome)
+        if (openMap)
         {
-            intro();
+            setMap();
         }
 
-        if (atPlayground)
-        {
-            audioSource.clip = playground;
-            audioSource.Play();
-        }
-
-        if (withLinda)
-        {
-            setLinda();
-        }
-
-        if (withBlythe)
-        {
-            setBlythe();
-        }
-
-        if (withJaney)
-        {
-            setJaney();
-        }
         
-        if (atStore)
-        {
-            audioSource.clip = store;
-            audioSource.Play();
-
-            setStore();
-        }
-
-//        if (openMap)
-//        {
-//            setMap();
-//        }
-
-        if (day1)
-        {
-            intro2();
-        }
     }
     
     void RemoveChildren () {
@@ -199,49 +165,54 @@ public class Kimmy : MonoBehaviour {
         audioSource.PlayOneShot(click, 0.1f);
         if (choice.text.Contains("Store"))
         {
-            audioSource.PlayOneShot(storeBell, 0.8f);
-            atStore = true;
+            audioSource.PlayOneShot(storeBell, 0.6f);
+            audioSource.clip = store;
+            audioSource.Play();
+
+            setStore();
+        }
+        
+        if (choice.text.Contains("Map"))
+        {
+            setMap();
         }
 
         if (choice.text.Contains("Playground"))
         {
-            atPlayground = true;
+            setPlayground();
+            audioSource.clip = playground;
+            audioSource.Play();
         }
 
         if (choice.text.Contains("Head to Kimmy's house"))
         {
-            atHome = true; 
+            intro();
         }
 
         if (choice.text.Contains("Linda"))
         {
-            withLinda = true;
+            setLinda();
         }
 
         if (choice.text.Contains("Janey"))
         {
-            withJaney = true;
+            setJaney();
         }
 
         if (choice.text.Contains("Blythe"))
         {
-            withBlythe = true;
+            setBlythe();
         }
 
         if (choice.text.Contains("chalk - 5"))
         {
-            audioSource.PlayOneShot(bought);
-        }
-
-        if (choice.text.Contains("map"))
-        {
-            openMap = true;
+            audioSource.PlayOneShot(boughtSound, 0.6f);
         }
 
         if (choice.text.Contains("Day 1"))
         {
             Debug.Log("moving into day 1");
-            day1 = true;
+            intro2();
         }
 
         if (choice.text.Contains("Quit"))
@@ -299,17 +270,12 @@ public class Kimmy : MonoBehaviour {
 
     void intro()
     {
-        danaSprite.SetActive(true);
         momSprite.SetActive(true);
-        kimmySprite.SetActive(true);
         kimmyMomSprite.SetActive(true); 
     }
 
     void intro2()
     {
-        danaSprite.SetActive(true);
-        momSprite.SetActive(true);
-
         momSprite.SetActive(false);
         kimmyMomSprite.SetActive(false);
     }
@@ -317,8 +283,6 @@ public class Kimmy : MonoBehaviour {
     void setBlythe()
     {
         Debug.Log("We're talking to Blythe");
-        kimmySprite.SetActive(true);
-        danaSprite.SetActive(true);
         blytheSprite.SetActive(true);
         
         janeySprite.SetActive(false);
@@ -329,9 +293,6 @@ public class Kimmy : MonoBehaviour {
     void setLinda()
     {
         Debug.Log("We're talking to Linda");
-        kimmySprite.SetActive(true);
-        danaSprite.SetActive(true);
-//        lindaSprite.GetComponent<SpriteRenderer>()
         lindaSprite.SetActive(true);
         
         Debug.Log("Linda status: " + lindaSprite.activeSelf);
@@ -344,8 +305,6 @@ public class Kimmy : MonoBehaviour {
     void setJaney()
     {
         Debug.Log("We're talking to Janey");
-        kimmySprite.SetActive(true);
-        danaSprite.SetActive(true);
         janeySprite.SetActive(true);
 
         lindaSprite.SetActive(false);
@@ -363,6 +322,11 @@ public class Kimmy : MonoBehaviour {
 
     void setPlayground()
     {
+        playgroundBackground.SetActive(true);
+        storeBackground.SetActive(false);
+        mapBackground.SetActive(false);
+        houseBackground.SetActive(false);
+        
         momSprite.SetActive(false);
         kimmyMomSprite.SetActive(false);
         deanSprite.SetActive(false);
@@ -370,8 +334,11 @@ public class Kimmy : MonoBehaviour {
 
     void setStore()
     {
-        kimmySprite.SetActive(true);
-        danaSprite.SetActive(true);
+        storeBackground.SetActive(true);
+        playgroundBackground.SetActive(false);
+        mapBackground.SetActive(false);
+        houseBackground.SetActive(false);
+        
         deanSprite.SetActive(true);
 
         momSprite.SetActive(false);
@@ -383,8 +350,12 @@ public class Kimmy : MonoBehaviour {
 
     void setMap()
     {
-        kimmySprite.SetActive(true);
-        danaSprite.SetActive(true);
+        mapBackground.SetActive(true);
+        storeBackground.SetActive(false);
+        playgroundBackground.SetActive(false);
+        houseBackground.SetActive(false);
+        
+        audioSource.PlayOneShot(mapSound, 1.2f);
         
         deanSprite.SetActive(false);
         momSprite.SetActive(false);
