@@ -12,22 +12,16 @@ public class Kimmy : MonoBehaviour {
     [SerializeField] private TextAsset _inkJsonAsset;
     [SerializeField] private Story _story;
     
+    //text
     public TMP_Text textPrefab;
     public TMP_FontAsset dialogueFont;
     public Button buttonPrefab;
-    
-    public GameObject momSprite;
-    public GameObject danaSprite;
-    public GameObject kimmySprite;
-    public GameObject kimmyMomSprite;
-    public GameObject deanSprite;
-    public GameObject lindaSprite;
-    public GameObject blytheSprite;
-    public GameObject janeySprite;
-
+   
+    //choice and dialogue panels will determine where the dialogue and buttons are intantiated 
     public GameObject choicePanel;
     public GameObject dialoguePanel;
     
+    //sounds 
     public AudioSource audioSource;
     public AudioClip mapSound; 
     public AudioClip click; 
@@ -36,30 +30,41 @@ public class Kimmy : MonoBehaviour {
     public AudioClip store;
     public AudioClip background;
     public AudioClip playground;
-
-    private bool day1;
     
+    //locations/scene indicators 
+    private bool day1;
     private bool atPlayground;
     private bool atStore;
     private bool atHome;
     private bool openMap;
-
+    //backgrounds
+    public GameObject storeBackground;
+    public GameObject playgroundBackground;
+    public GameObject mapBackground;
+    public GameObject houseBackground;
+    
+    //characters
+    public GameObject momSprite;
+    public GameObject danaSprite;
+    public GameObject kimmySprite;
+    public GameObject kimmyMomSprite;
+    public GameObject deanSprite;
+    public GameObject lindaSprite;
+    public GameObject blytheSprite;
+    public GameObject janeySprite;
+    //speaking indicators 
     private bool withLinda;
     private bool withBlythe;
     private bool withJaney;
     private bool withDean;
 
+    //start locations
     private Vector3 danaStartLocation;
     private Vector3 momStartLocation;
     private Vector3 kimmyMomStartLocation;
     private Vector3 kimmyStartLocation;
-
-    private bool wow;
-
-    public GameObject storeBackground;
-    public GameObject playgroundBackground;
-    public GameObject mapBackground;
-    public GameObject houseBackground;
+    
+    
 
     private GameObject[] characters;
 
@@ -94,10 +99,6 @@ public class Kimmy : MonoBehaviour {
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            wow = true;
-        }
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             SceneManager.LoadScene("Main Menu");
@@ -126,8 +127,6 @@ public class Kimmy : MonoBehaviour {
         {
             setMap();
         }
-
-        
     }
     
     void RemoveChildren () {
@@ -152,7 +151,6 @@ public class Kimmy : MonoBehaviour {
         TMP_Text choiceText = choice.GetComponentInChildren<TMP_Text> ();
         choiceText.text = text;
         choiceText.font = dialogueFont;
-//        choiceText.fontSize = textFontSize;
         
         HorizontalLayoutGroup layoutGroup = choice.GetComponent <HorizontalLayoutGroup> ();
         layoutGroup.childForceExpandHeight = false;
@@ -229,7 +227,6 @@ public class Kimmy : MonoBehaviour {
         TMP_Text storyText = Instantiate (textPrefab) as TMP_Text;
         storyText.text = text;
         storyText.font = dialogueFont;
-//        storyText.fontSize = textFontSize;
        
         if (text.Contains("Dana:"))
         {
