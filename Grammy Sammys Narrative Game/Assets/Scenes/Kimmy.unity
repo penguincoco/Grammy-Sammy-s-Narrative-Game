@@ -864,7 +864,9 @@ MonoBehaviour:
   dialoguePanel: {fileID: 1394064381}
   textColor: {r: 0.24528301, g: 0.13689248, b: 0.07751868, a: 1}
   audioSource: {fileID: 763318442}
+  click: {fileID: 8300000, guid: 8d957f0ba3c89462db1ed164d66ce23f, type: 3}
   storeBell: {fileID: 8300000, guid: 7712e4309579a4070a1d826b9b28f111, type: 3}
+  bought: {fileID: 8300000, guid: 2274033e44cd340378f6394a90707516, type: 3}
   store: {fileID: 8300000, guid: 83d8d64f1b52a4dc3a81571c728e1b88, type: 3}
   background: {fileID: 8300000, guid: 8f7ed8f6717644b2eb5f7054116eb81a, type: 3}
   playground: {fileID: 8300000, guid: 6791ccc22136c4667bb7f7d1544ec4f1, type: 3}
@@ -1434,7 +1436,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
