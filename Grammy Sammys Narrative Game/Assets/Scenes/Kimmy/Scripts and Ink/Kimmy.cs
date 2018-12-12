@@ -44,7 +44,10 @@ public class Kimmy : MonoBehaviour {
     private bool atHome;
     private bool openMap;
 
-    private bool withLinda; 
+    private bool withLinda;
+    private bool withBlythe;
+    private bool withJaney;
+    private bool withDean;
 
     private Vector3 danaStartLocation;
     private Vector3 momStartLocation;
@@ -129,10 +132,22 @@ public class Kimmy : MonoBehaviour {
             setLinda();
         }
 
+        if (withBlythe)
+        {
+            setBlythe();
+        }
+
+        if (withJaney)
+        {
+            setJaney();
+        }
+        
         if (atStore)
         {
             audioSource.clip = store;
             audioSource.Play();
+
+            setStore();
         }
     }
     
@@ -266,24 +281,17 @@ public class Kimmy : MonoBehaviour {
         kimmySprite.SetActive(true);
         kimmyMomSprite.SetActive(true);
     }
-    
-    void kimmyHouse()
-    {
-        kimmySprite.SetActive(true);
-        danaSprite.SetActive(true);
-    }
 
     void setBlythe()
     {
+        Debug.Log("We're talking to Blythe");
         kimmySprite.SetActive(true);
         danaSprite.SetActive(true);
         blytheSprite.SetActive(true);
         
-        momSprite.SetActive(false);
-        kimmyMomSprite.SetActive(false);
         janeySprite.SetActive(false);
         lindaSprite.SetActive(false);
-        deanSprite.SetActive(false);
+        setPlayground();
     }
 
     void setLinda()
@@ -292,12 +300,21 @@ public class Kimmy : MonoBehaviour {
         kimmySprite.SetActive(true);
         danaSprite.SetActive(true);
         lindaSprite.SetActive(true);
-        
-        momSprite.SetActive(false);
-        kimmyMomSprite.SetActive(false);
+
         janeySprite.SetActive(false);
         blytheSprite.SetActive(false);
-        deanSprite.SetActive(false);
+    }
+
+    void setJaney()
+    {
+        Debug.Log("We're talking to Janey");
+        kimmySprite.SetActive(true);
+        danaSprite.SetActive(true);
+        janeySprite.SetActive(true);
+
+        lindaSprite.SetActive(false);
+        blytheSprite.SetActive(false);
+        setPlayground();
     }
 
     void resetAll()
@@ -306,5 +323,25 @@ public class Kimmy : MonoBehaviour {
         momSprite.transform.position = momStartLocation;
         kimmyMomSprite.transform.position = kimmyMomStartLocation;
         kimmySprite.transform.position = kimmyStartLocation;
+    }
+
+    void setPlayground()
+    {
+        momSprite.SetActive(false);
+        kimmyMomSprite.SetActive(false);
+        deanSprite.SetActive(false);
+    }
+
+    void setStore()
+    {
+        kimmySprite.SetActive(true);
+        danaSprite.SetActive(true);
+        deanSprite.SetActive(true);
+
+        momSprite.SetActive(false);
+        kimmyMomSprite.SetActive(false);
+        lindaSprite.SetActive(false);
+        blytheSprite.SetActive(false);
+        janeySprite.SetActive(false);
     }
 }
