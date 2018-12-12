@@ -39,6 +39,8 @@ public class Kimmy : MonoBehaviour {
     public AudioClip background;
     public AudioClip playground;
 
+    private bool day1;
+    
     private bool atPlayground;
     private bool atStore;
     private bool atHome;
@@ -150,6 +152,11 @@ public class Kimmy : MonoBehaviour {
         {
             setMap();
         }
+
+        if (day1)
+        {
+            intro2();
+        }
     }
     
     void RemoveChildren () {
@@ -230,7 +237,7 @@ public class Kimmy : MonoBehaviour {
         if (choice.text.Contains("Day 1"))
         {
             Debug.Log("moving into day 1");
-            intro2();
+            day1 = true;
         }
 
         choiceClicked = true;
@@ -291,12 +298,11 @@ public class Kimmy : MonoBehaviour {
         danaSprite.SetActive(true);
         momSprite.SetActive(true);
         kimmySprite.SetActive(true);
-        kimmyMomSprite.SetActive(true);
+        kimmyMomSprite.SetActive(true); 
     }
 
     void intro2()
     {
-        Debug.Log("Setting the scene for intro2. Kimmy and Dana. No moms");
         danaSprite.SetActive(true);
         momSprite.SetActive(true);
 
@@ -322,6 +328,8 @@ public class Kimmy : MonoBehaviour {
         kimmySprite.SetActive(true);
         danaSprite.SetActive(true);
         lindaSprite.SetActive(true);
+        
+        Debug.Log("Linda status: " + lindaSprite.activeSelf);
 
         janeySprite.SetActive(false);
         blytheSprite.SetActive(false);
