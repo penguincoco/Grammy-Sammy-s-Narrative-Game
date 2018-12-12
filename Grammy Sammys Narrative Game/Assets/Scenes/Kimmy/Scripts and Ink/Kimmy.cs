@@ -56,6 +56,8 @@ public class Kimmy : MonoBehaviour {
     private Vector3 kimmyMomStartLocation;
     private Vector3 kimmyStartLocation;
 
+    private bool wow;
+
     private GameObject[] characters;
 
     private bool choiceClicked; 
@@ -89,6 +91,10 @@ public class Kimmy : MonoBehaviour {
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            wow = true;
+        }
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             SceneManager.LoadScene("Main Menu");
@@ -126,7 +132,6 @@ public class Kimmy : MonoBehaviour {
 
         if (withLinda)
         {
-            Debug.Log("recognise that we're talking to Linda");
             setLinda();
         }
 
@@ -148,10 +153,10 @@ public class Kimmy : MonoBehaviour {
             setStore();
         }
 
-        if (openMap)
-        {
-            setMap();
-        }
+//        if (openMap)
+//        {
+//            setMap();
+//        }
 
         if (day1)
         {
@@ -210,7 +215,6 @@ public class Kimmy : MonoBehaviour {
 
         if (choice.text.Contains("Linda"))
         {
-            Debug.Log("talking to Linda");
             withLinda = true;
         }
 
@@ -238,6 +242,11 @@ public class Kimmy : MonoBehaviour {
         {
             Debug.Log("moving into day 1");
             day1 = true;
+        }
+
+        if (choice.text.Contains("Quit"))
+        {
+            SceneManager.LoadScene("Main Menu");
         }
 
         choiceClicked = true;
@@ -285,11 +294,6 @@ public class Kimmy : MonoBehaviour {
             resetAll();
         }
 
-        if (text.Contains("Quit"))
-        {
-            SceneManager.LoadScene("Main Menu");
-        }
-
         storyText.transform.SetParent (dialoguePanel.transform, false);
     }
 
@@ -327,6 +331,7 @@ public class Kimmy : MonoBehaviour {
         Debug.Log("We're talking to Linda");
         kimmySprite.SetActive(true);
         danaSprite.SetActive(true);
+//        lindaSprite.GetComponent<SpriteRenderer>()
         lindaSprite.SetActive(true);
         
         Debug.Log("Linda status: " + lindaSprite.activeSelf);

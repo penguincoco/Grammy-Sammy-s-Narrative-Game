@@ -810,7 +810,7 @@ MonoBehaviour:
   textPrefab: {fileID: 114766407074877208, guid: 5aa0418408243443ea2a8c80e37196c2,
     type: 2}
   dialogueFont: {fileID: 11400000, guid: af0a5e76d938e4a50862591836834489, type: 2}
-  textFontSize: 25
+  textFontSize: 0
   buttonPrefab: {fileID: 114978715648378910, guid: f68830a0587494a1a868cb8c7c2da7bc,
     type: 2}
   momSprite: {fileID: 397726013}
@@ -823,11 +823,11 @@ MonoBehaviour:
   janeySprite: {fileID: 1921506166}
   choicePanel: {fileID: 1150636941}
   dialoguePanel: {fileID: 1394064381}
-  textColor: {r: 0.24528301, g: 0.13689248, b: 0.07751868, a: 1}
+  textColor: {r: 0, g: 0, b: 0, a: 0}
   audioSource: {fileID: 763318442}
-  click: {fileID: 8300000, guid: 8d957f0ba3c89462db1ed164d66ce23f, type: 3}
+  click: {fileID: 8300000, guid: 8fe91580e04db400fb6ca37fdf2bfb02, type: 3}
   storeBell: {fileID: 8300000, guid: 7712e4309579a4070a1d826b9b28f111, type: 3}
-  bought: {fileID: 8300000, guid: 2274033e44cd340378f6394a90707516, type: 3}
+  bought: {fileID: 8300000, guid: 97270b80321ef44aa87f28ca27c64756, type: 3}
   store: {fileID: 8300000, guid: 83d8d64f1b52a4dc3a81571c728e1b88, type: 3}
   background: {fileID: 8300000, guid: 8f7ed8f6717644b2eb5f7054116eb81a, type: 3}
   playground: {fileID: 8300000, guid: 6791ccc22136c4667bb7f7d1544ec4f1, type: 3}
